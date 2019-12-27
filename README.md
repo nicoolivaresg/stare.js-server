@@ -36,7 +36,9 @@ npm install stare-js
 ```js
 const stare = require('stare-js');
 
-stare('google', `What is 'hello world'?`, 1, ['ranking', 'language'], (result, err) => {
+
+// stare(searchEngine = '', query = '', pageNumber = 1, metrics = [], callback = function);
+stare('google', 'What is hello world?', 1, ['ranking', 'language'], (result, err) => {
     if (err) {
       throw err;
     }
@@ -44,13 +46,13 @@ stare('google', `What is 'hello world'?`, 1, ['ranking', 'language'], (result, e
   });
 ````
 
-You can find the most basic full example in the [examples folder](/examples/README.md).
+You can find the most basic full example in the [examples folder](/examples/).
 
 ## Documentation
 
 Please see the documentation [here](/docs/README.md).
 
-## Contributors
+## Contributors
 
 - Roberto González-Ibáñez
 - Camila Márquez

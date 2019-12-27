@@ -1,0 +1,43 @@
+{
+  "name": "stare-server",
+  "version": "1.0.0",
+  "description": "node.js serp visualization server",
+  "keywords": [
+    "server",
+    "serp",
+    "visualization"
+  ],
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-salazar-se/stare-server.git"
+  },
+  "contributors": [
+    {
+      "name": "Diego Salazar S.",
+      "email": "diego.salazar.se@usach.cl"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d-salazar-se/stare-server/issues"
+  },
+  "homepage": "https://github.com/d-salazar-se/stare-server#readme",
+  "dependencies": {
+    "azure-cognitiveservices-websearch": "^2.0.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "googleapis": "^46.0.0",
+    "hyphenopoly": "^3.3.0",
+    "languagedetect": "^2.0.0",
+    "ms-rest-azure": "^3.0.0",
+    "request-promise": "^4.2.5"
+  },
+  "devDependencies": {}
+}

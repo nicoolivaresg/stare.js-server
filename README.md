@@ -1,6 +1,6 @@
-# Stare.js
+# StArE.js
 
-StArE.js is an open source project intended to facilitate developers the creation of alternative visualizations of search engine results page (SERP). Stare.js provides a modular and extensible processing pipeline capable of (1) transforming SERP, (2) extracting features from individual search results, and (3) visualizing SERP in multiple ways.
+StArE.js is an open source project intended to facilitate developers the creation of alternative visualizations of search engine results page (SERP). StArE.js provides a modular and extensible processing pipeline capable of (1) transforming SERP, (2) extracting features from individual search results, and (3) visualizing SERP in multiple ways.
 
   - Extensible
   - Modular
@@ -15,7 +15,7 @@ StArE.js is an open source project intended to facilitate developers the creatio
 
 ## Extensions
 
-Stare.js is currently extended with the following plugins, all of them developed as part of the proof of concept.
+StArE.js is currently extended with the following plugins, all of them developed as part of the proof of concept.
 
 | Plugin | Function |
 | ------ | ------ |
@@ -25,6 +25,8 @@ Stare.js is currently extended with the following plugins, all of them developed
 | Support for Google SERPs | Handler for SERPs obtained through the Google Custom Search JSON API
 | Support for Bing SERPs | Handler for SERPs obtained through the Bing web search API
 | Support for Ecosia SERPs | Handler for SERPs obtained from ecosia through a web scrapper
+
+You can create your own extensions (metrics and serp support) as is explained in the [docs](/docs).
 
 ## Installation
 

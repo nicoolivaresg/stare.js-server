@@ -1,0 +1,473 @@
+<!doctype html>  
+
+<!--[if IEMobile 7 ]> <html lang="en-US" prefix="og: http://ogp.me/ns#"class="no-js iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js"><!--<![endif]-->
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<title>Arcane JavaScript knowledge still useful - A geek with a hat</title>
+				
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				
+		<!-- media-queries.js (fallback) -->
+		<!--[if lt IE 9]>
+			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>			
+		<![endif]-->
+
+		<!-- html5.js -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+  		<link rel="pingback" href="https://swizec.com/blog/xmlrpc.php">
+  		<link rel="alternate" type="application/rss+xml" title="RSS - A geek with a hat" href="https://swizec.com/blog/feed" />
+		<link rel="alternate" type="application/atom+xml" title="Atom 0.3 - A geek with a hat" href="https://swizec.com/blog/feed/atom" />
+		
+			<script src="//load.sumome.com/" data-sumo-site-id="c7c192d8e15fee9223dc30d297ff6481a514d0c2d4cd542ad8dfeeae752c90bd" async="async"></script>
+
+		<!-- wordpress head functions -->
+		
+<!-- This site is optimized with the Yoast SEO plugin v9.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://swizec.com/blog/arcane-javascript-knowledge-still-useful/swizec/7932" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Arcane JavaScript knowledge still useful - A geek with a hat" />
+<meta property="og:description" content="ES6 has been with us for 2 years. ES2016 and ES2017 are standard practice. ES2018 is just around the corner. And yet, sometimes you still need JavaScript practices so arcane you&#8217;ve almost forgotten they exist. Such was the case with a production bug we discovered after a performance optimization. When you get Uncaught TypeError: Cannot...  Read more &raquo;" />
+<meta property="og:url" content="https://swizec.com/blog/arcane-javascript-knowledge-still-useful/swizec/7932" />
+<meta property="og:site_name" content="A geek with a hat" />
+<meta property="article:publisher" content="https://facebook.com/swizecpage" />
+<meta property="article:section" content="Front End" />
+<meta property="article:published_time" content="2017-11-17T15:22:07+00:00" />
+<meta property="article:modified_time" content="2018-01-21T20:24:16+00:00" />
+<meta property="og:updated_time" content="2018-01-21T20:24:16+00:00" />
+<meta property="og:image" content="https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/uploads/2017/11/yuploader.gif?x24020" />
+<meta property="og:image:secure_url" content="https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/uploads/2017/11/yuploader.gif?x24020" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="ES6 has been with us for 2 years. ES2016 and ES2017 are standard practice. ES2018 is just around the corner. And yet, sometimes you still need JavaScript practices so arcane you&#8217;ve almost forgotten they exist. Such was the case with a production bug we discovered after a performance optimization. When you get Uncaught TypeError: Cannot... Read more &raquo;" />
+<meta name="twitter:title" content="Arcane JavaScript knowledge still useful - A geek with a hat" />
+<meta name="twitter:site" content="@swizec" />
+<meta name="twitter:image" content="https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/uploads/2017/11/yuploader.gif?x24020" />
+<meta name="twitter:creator" content="@swizec" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.10.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var mi_version         = '7.10.0';
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-1464315-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-1464315-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('require', 'displayfeatures');
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/swizec.com\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.13"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-syntax-css-css'  href='https://swizec.com/blog/wp-content/plugins/wp-syntax/css/wp-syntax.css?x24020' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/themes/wp-bootstrap-customized/library/css/bootstrap.css?x24020' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-responsive-css'  href='https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/themes/wp-bootstrap-customized/library/css/responsive.css?x24020' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-bootstrap-css'  href='https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/themes/wp-bootstrap-customized/style.css?x24020' type='text/css' media='all' />
+<link rel='stylesheet' id='icons-css'  href='https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/themes/wp-bootstrap-customized/library/css/bootstrap.icon-large.min.css?x24020' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://swizec.com/blog/wp-content/plugins/jetpack/css/jetpack.css?x24020' type='text/css' media='all' />
+<script src="https://swizec.com/blog/?x24020"></script>
+
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script src="https://swizec.com/blog/?x24020"></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/swizec.com\/blog","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script src="https://swizec.com/blog/?x24020"></script>
+
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ck_data = {"ajaxurl":"https:\/\/swizec.com\/blog\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script src="https://swizec.com/blog/?x24020"></script>
+
+
+
+
+<link rel='https://api.w.org/' href='https://swizec.com/blog/wp-json/' />
+<link rel='shortlink' href='https://swizec.com/blog/?p=7932' />
+<link rel="alternate" type="application/json+oembed" href="https://swizec.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fswizec.com%2Fblog%2Farcane-javascript-knowledge-still-useful%2Fswizec%2F7932" />
+<link rel="alternate" type="text/xml+oembed" href="https://swizec.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fswizec.com%2Fblog%2Farcane-javascript-knowledge-still-useful%2Fswizec%2F7932&#038;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style>		<!-- end of wordpress head -->
+		
+		<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '714190382013726');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=714190382013726&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+		<!-- typeahead plugin - if top nav search bar enabled -->
+				<link href="https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/themes/wp-bootstrap-customized/webfonts/ss-social-circle.css?x24020" rel="stylesheet" />				
+	</head>
+	
+	<body class="post-template-default single single-post postid-7932 single-format-standard">
+		
+		<div class="container-fluid">
+			
+			<div id="content" class="clearfix row-fluid">
+				<div id="me" class="span2">
+					<a href="/"><img src="https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/themes/wp-bootstrap-customized/images/me.png?x24020" /></a>
+					<div class="author-info">
+						<p style="margin: 0">Hi I'm</p>
+						<strong>Swizec Teller</strong>
+						<p>I build things and write about it to help <strong>coders become engineers</strong>.</p>
+						<p>Over the years I've helped over <strong>10,000 engineers</strong> hone their craft. Engineers have used my books, articles, and talks to improve their technical skills, get promotions, change jobs, and ship their products faster.</p>
+						<address>
+							<a href="/" class="about">More about me</a><br />
+				            <a href="mailto:swizec@swizec.com" class="social" title="Email me"><i class="ss-icon">email</i></a>
+				            <a href="https://github.com/Swizec" class="social" title="See my github profile"><i class="ss-icon">octocat</i></a>
+				            <a href="https://twitter.com/Swizec" class="social" title="Follow me on twitter"><i class="ss-icon">twitter</i></a>
+				            <a href="http://swizec.com/blog/feed" class="social" title="Subscribe to RSS"><i class="ss-icon">rss</i></a>
+				         </address>
+					</div>
+					<p class="border"></p>
+					<p class="meta"><strong>Published</strong><br /> <time datetime="2017-11-17" pubdate>November 17, 2017</time> <br/>in <a href="https://swizec.com/blog/category/technical/front-end" rel="category tag">Front End</a>, <a href="https://swizec.com/blog/category/technical" rel="category tag">Technical</a>.</p>
+					<p class="border"></p>
+				</div>
+			
+				<div id="main" class="span8 clearfix" role="main">
+
+										
+					<article id="post-7932" class="clearfix post-7932 post type-post status-publish format-standard hentry category-front-end category-technical" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+						
+						<header>
+						
+														
+							<div class="page-header">
+								<a href="https://swizec.com/blog" title="Go to A geek with a hat" class="home-link">A geek with a hat</a>
+								<h1 class="single-title" itemprop="headline">Arcane JavaScript knowledge still useful</h1>
+								
+								<p class="meta"><strong>Swizec Teller</strong> published on <time datetime="2017-11-17" pubdate>November 17, 2017</time> in <a href="https://swizec.com/blog/category/technical/front-end" rel="category tag">Front End</a>, <a href="https://swizec.com/blog/category/technical" rel="category tag">Technical</a>.</p>
+							</div>
+						
+						</header> <!-- end article header -->
+					
+						<section class="post_content clearfix" itemprop="articleBody">
+							<p>ES6 has been with us for 2 years. <a href="https://es2017.io">ES2016 and ES2017</a> are standard practice. ES2018 is just around the corner.</p>
+<p>And yet, sometimes you still need JavaScript practices so arcane you&#8217;ve almost forgotten they exist. Such was the case with a production bug we discovered after a performance optimization.</p>
+<blockquote class="twitter-tweet" data-width="550">
+<p lang="en" dir="ltr">When you get </p>
+<p>Uncaught TypeError: Cannot read property &#39;call&#39; of undefined<br />    at __webpack_require__</p>
+<p>But only on every 4th page load. Sometimes 3rd. Or 7th. <a href="https://t.co/7T7gXFwQmi">pic.twitter.com/7T7gXFwQmi</a></p>
+<p>&mdash; Swizec (@Swizec) <a href="https://twitter.com/Swizec/status/928761345750605825?ref_src=twsrc%5Etfw">November 9, 2017</a></p></blockquote>
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>Every once in a while, you would refresh <a href="https://www.yup.com">our webapp</a> and stare at the loading animation forever. Yes, we have one of those because we&#8217;re cool.</p>
+<img class="alignnone size-full wp-image-7930" src="https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/uploads/2017/11/yuploader.gif?x24020" width="370" height="260" />
+<p>We worked hard on it, and it looks great. But we don&#8217;t want you to be stuck staring at it never getting to the page.</p>
+<p>We traced the problem down to a JavaScript error during app initialization. Sometimes Webpack would try to execute modules before they were ready.</p>
+<p>This shows up as a cryptic error 👇</p>
+<pre><code>Uncaught TypeError: Cannot read property 'call' of undefined
+    at __webpack_require__
+</code></pre>
+<p>It happens on this line inside <code>manifest.js</code> 👇</p>
+<pre><code>// Execute the module function
+modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+</code></pre>
+<p>Now <code>manifest.js</code> is a generated file, so there isn&#8217;t much you can do to fix it. In fact, you shouldn&#8217;t have to fix it. Or even consider modifying it. Ever.</p>
+<p>Webpack generates this file when you compile your code and uses it to bootstrap your code. It builds a list of modules inside that <code>modules</code> dictionary and executes them when you run <code>import</code> or <code>require()</code>.</p>
+<p>Usually, this either always works or never works.</p>
+<p>It always works when your code is correct. It never works when you forget to <code>export</code> your module.</p>
+<p>But it&#8217;s never supposed to get into such a situation that it <em>sometimes</em> works and sometimes doesn&#8217;t. That is right out.</p>
+<p>So I started to dig.</p>
+<p>And dig.</p>
+<p>And dig some more.</p>
+<p>Our bug stymied even grandmaster TheLarkInn.</p>
+<blockquote class="twitter-tweet" data-width="550">
+<p lang="und" dir="ltr">Wat.</p>
+<p>&mdash; Sean Thomas Larkin (@TheLarkInn) <a href="https://twitter.com/TheLarkInn/status/928789785124016128?ref_src=twsrc%5Etfw">November 10, 2017</a></p></blockquote>
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>I dug for an hour. Then two. Then five.</p>
+<p>I tried everything. I added console logs into manifest.js to track which module exactly was causing a problem. I used <a href="https://webpack.github.io/analyse/">Webpack&#8217;s official analyze tool</a> to inspect our builds and associate <code>moduleId</code>s with specific code files.</p>
+<p>At up to 3 minutes per compile, it was slow going.</p>
+<p>I changed this and that and nothing worked.</p>
+<img class="alignnone size-full wp-image-7931" src="https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/uploads/2017/11/tired-at-computer.gif?x24020" width="500" height="373" />
+<p>Then I found this old article Jake Archibald published in 2013. <a href="https://www.html5rocks.com/en/tutorials/speed/script-loading/">Deep dive into the murky waters of script loading</a></p>
+<p>In it, he explained that scripts dynamically inserted into the DOM were <code>async</code> by default.</p>
+<p>💡</p>
+<p>Why does that matter? Because our performance optimization made our scripts <code>preload</code> then injected them into the DOM when the files were loaded.</p>
+<p>This meant that <em>sometimes</em> our <code>main_code.js</code> would start executing <em>before</em> our <code>main_code_vendor.js</code> file was loaded. As a result, core libraries our code depends on weren&#8217;t loaded yet by the time our code tried to use them.</p>
+<p>Ha!</p>
+<h2>Some background</h2>
+<p>Let me give you some background.</p>
+<p>We use <a href="https://swizec.com/blog/dirty-hack-took-30percent-off-webpack-size/swizec/7657">Webpack to split our app into multiple files</a>. Libraries go into an <code>app_vendor.js</code> file, and our code goes into an <code>app.js</code> file. Most of our apps also have chunks that Webpack loads asynchronously when they&#8217;re needed.</p>
+<p>So you need to load at least 3 JavaScript files to make any of our apps work</p>
+<ol>
+<li>manifest.js</li>
+<li>app_vendor.js</li>
+<li>app.js</li>
+</ol>
+<p>Loading scripts as <code>async</code> is an old technique to make webapps faster. You write <code>&lt;script src="bla" async&gt;&lt;/script&gt;</code> and the browser doesn&#8217;t wait for JavaScript to load before moving on to rendering the rest of your DOM.</p>
+<p>This is great, but it leads to problems. Scripts might execute in random order.</p>
+<p>So instead, we used <code>defer</code> for a long time. This downloads scripts without waiting for them, then executes all of them in order as they were defined.</p>
+<p>Wonderful.</p>
+<p>But preloading is even better 👉 <code>&lt;link rel="preload" href="bla" onload="loadJsFiles(this.href) /&gt;</code>. With preloading, you&#8217;re loading scripts without waiting for them, potentially before the user even opens your site, then executing a callback to say <em>&#8220;Ok we got the script, now what?&#8221;</em></p>
+<p>In our case, the <em>&#8220;now what&#8221;</em> part would create a <code>script</code> DOM node and insert it into the page. That makes it execute.</p>
+
+<div class="wp_syntax" style="position:relative;"><table><tr><td class="code"><pre class="javascript" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> loadJsFile<span style="color: #009900;">&#40;</span>file<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #006600; font-style: italic;">// keep track of what's been loaded</span>
+    <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>allScriptsLoaded<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+        loadedScripts.<span style="color: #660066;">forEach</span><span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">function</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+            <span style="color: #000066; font-weight: bold;">var</span> script <span style="color: #339933;">=</span> document.<span style="color: #660066;">createElement</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'script'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+            script.<span style="color: #660066;">src</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">'&lt;%= &quot;#{js_file_href}&quot; %&gt;'</span><span style="color: #339933;">;</span>            document.<span style="color: #660066;">body</span>.<span style="color: #660066;">appendChild</span><span style="color: #009900;">&#40;</span>script<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></td></tr></table><p class="theCode" style="display:none;">function loadJsFile(file) {
+    // keep track of what's been loaded
+    if (allScriptsLoaded) {
+        loadedScripts.forEach(function () {
+            var script = document.createElement('script');
+            script.src = '&lt;%= &quot;#{js_file_href}&quot; %&gt;';            document.body.appendChild(script);
+        })
+    }
+}</p></div>
+
+<p>Keep track of all scripts that were loaded, insert them into the DOM, and trigger their execution when all are ready.</p>
+<h2>The solution</h2>
+<p>This <em>&#8220;Preload as much as possible, insert into DOM when all is ready&#8221;</em> works great.</p>
+<p>Except when it doesn&#8217;t.</p>
+<p><em>Sometimes</em> they would execute in the wrong order. Our business code would start executing before our vendor code and discover that the libraries it needs weren&#8217;t there.</p>
+<p>💩</p>
+<p>But why? We wait until all scripts are preloaded before inserting them into the page.</p>
+<p>Because dynamically inserted scripts are <code>async</code> by default. You have explicitly disable that with <code>script.async = false</code>.</p>
+<p>And everything works.</p>
+<p>2013-era JavaScript strikes again. Still relevant.</p>
+<img class="alignnone size-full wp-image-7929" src="https://d3nulzlctd9uky.cloudfront.net/blog/wp-content/uploads/2017/11/cosby-facepalm.gif?x24020" width="400" height="271" />
+<script async data-uid="25ffa2fad2" src="https://f.convertkit.com/25ffa2fad2/623cf1f4cb.js"></script>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div>							
+							<div id="end-of-post"></div>
+                            <h3>Learned something new? Want to improve your skills?</h3>
+                            <p>Join <b>over 10,000 engineers</b> just like you already improving their skills!</p>
+                            <p>Here's how it works 👇</p>
+                            <p>Leave your email and I'll send you an <b>Interactive Modern JavaScript Cheatsheet 📖</b>right away. After that you'll get thoughtfully written emails every week about <b>React, JavaScript</b>, and <b>your career</b>. Lessons learned over my 20 years in the industry working with companies ranging from tiny startups to Fortune5 behemoths.</p>
+
+                            <script async data-uid="b575e448ee" src="https://f.convertkit.com/b575e448ee/f713f950a7.js"></script>
+							
+
+							<p>PS: You should also follow me on twitter 👉 <a href="https://twitter.com/swizec">here</a>. <br/>It's where I go to shoot the shit about programming.</p>
+							
+							
+												
+						</section> <!-- end article section -->
+						
+						<footer>
+
+						</footer> <!-- end article footer -->
+					
+					</article> <!-- end article -->
+					
+					
+								
+					
+								
+				</div> <!-- end #main -->
+				<div class="span1"></div>
+				<div class="span1" id="books">
+					<iframe width="160" height="500" src="https://leanpub.com/nightowls/embed" frameborder="0" allowtransparency="true"></iframe>
+				</div>
+    
+			</div> <!-- end #content -->
+
+			<footer role="contentinfo">
+			
+				<div id="inner-footer" class="clearfix">
+		          <hr />
+		          					
+					<nav class="clearfix">
+											</nav>
+					
+					<p class="pull-right"><a href="http://320press.com" id="credit320" title="By the dudes of 320press">Base theme by 320press</a></p>
+			
+					<p class="attribution">&copy; Swizec Teller</p>
+				
+				</div> <!-- end #inner-footer -->
+				
+			</footer> <!-- end footer -->
+		
+		</div> <!-- end #container -->
+				
+		<!--[if lt IE 7 ]>
+  			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+  			<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+		<![endif]-->
+		
+		<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201952'></script>
+
+<script src="https://swizec.com/blog/?x24020"></script>
+
+<script type='text/javascript' src='https://stats.wp.com/e-201952.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.1.2',blog:'91276232',post:'7932',tz:'-8',srv:'swizec.com'} ]);
+	_stq.push([ 'clickTrackerInit', '91276232', '7932' ]);
+</script>
+		
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+	(function ($) {
+		$("a.twitter-share").click(function (event) {
+			event.preventDefault();
+			
+			var width  = 575,
+	        height = 400,
+	        left   = ($(window).width()  - width)  / 2,
+	        top    = ($(window).height() - height) / 2,
+	        url    = this.href,
+	        opts   = 'status=1' +
+	                 ',width='  + width  +
+	                 ',height=' + height +
+	                 ',top='    + top    +
+	                 ',left='   + left;
+	    
+	  	    window.open(url, 'twitter', opts);
+	 	
+	    	return false;
+		});
+	})(jQuery);
+</script>
+
+<script>
+    var _gaq=[['_setAccount','UA-1464315-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<!-- SegMetrics -->
+<script type="text/javascript">
+var _segq = _segq || [];
+var _segs = _segs || {};
+_segs.integration = '1763';
+_segs.link = ['swizec.com', 'reactfordataviz.com', 'es6cheatsheet.com', 'es2017.io', 'es2018.io'];
+(function(){var dc=document.createElement('script');dc.type='text/javascript';dc.async=true;dc.src='//tag.segmetrics.io/seg.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(dc,s);})();
+</script>
+
+
+	</body>
+
+</html>
+
+<!--
+Object Caching 28/59 objects using disk
+Page Caching using disk: enhanced 
+Content Delivery Network via d3nulzlctd9uky.cloudfront.net
+Minified using disk
+Database Caching 6/10 queries in 0.006 seconds using disk
+
+Served from: swizec.com @ 2019-12-29 08:32:55 by W3 Total Cache
+-->

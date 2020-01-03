@@ -1,0 +1,736 @@
+skip to main content
+
+
+
+    
+        
+            
+                
+    
+        
+        
+            
+                
+                 Sign In
+                Create Account
+            
+            
+        
+        
+    		
+
+
+            
+            
+                
+                    
+                        
+                            
+                            
+                        
+                        
+                            
+                            U.S. Department of EnergyOffice of Scientific and Technical Information
+                        
+                    
+                    
+                        
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+        
+            
+                Search terms:
+                
+                Advanced search options
+                
+
+                
+                    
+                        
+                            
+                        
+                        Advanced Search OptionsAdvanced Search queries use a traditional Term Search.  For more info, see our FAQ.
+                    
+
+                        
+                            All Fields: 
+                            
+                        
+                        
+                            Title: 
+                            
+                        
+                        
+                            Author / Contributor: 
+                            
+                        
+                        
+                            Digital Object Identifier (DOI): 
+                            
+                        
+                        
+                            Identifier Numbers: 
+                            
+                        
+                        
+                            Publication Date: 
+                            
+                                
+                                to
+                                
+                            
+                        
+                
+
+                
+                     More Options ...
+                    
+                        
+                            Full Text: 
+                            
+                        
+                        
+                            Resource Type: 
+                            
+                                
+                                
+                            
+                            
+                                
+                                    
+                                        
+                                            
+                                                Journal Article
+                                                    
+                                                
+                                                Technical Report
+                                                    
+                                                
+                                                Data
+                                                    
+                                                
+                                                Software
+                                                    
+                                                
+                                                Patent
+                                                    
+                                                
+                                                Conference / Event
+                                                    
+                                                
+                                            
+                                            
+                                                Book / Monograph
+                                                    
+                                                
+                                                Program Document
+                                                    
+                                                
+                                                Thesis / Dissertation
+                                                    
+                                                
+                                                Video / Audio
+                                                    
+                                                
+                                                Miscellaneous
+                                                    
+                                                
+                                            
+                                        
+                                    
+
+                                                                
+                            
+                        
+                        
+                        
+                            Subject: 
+                            
+                        
+                        
+                            Site: 
+                            
+                                All
+                            
+                        
+                        
+                            Research Org: 
+                            
+                        
+                        
+                            Sponsoring Org: 
+                            
+                        
+                        
+                            Update Date: 
+                            
+                                
+                                to
+                                
+                            
+                        
+                        
+                            Limit to INIS / NSA records only 
+                                
+                            
+                        
+                        
+                            Limit to Nobel Prize winning researchers only 
+                                
+                            
+                        
+                        
+                        
+                    
+                
+
+                
+                     Search
+                
+
+                
+            
+        
+        
+            Submit
+        
+    
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+                    
+                
+            
+        
+        
+            
+                
+                    
+                        
+                            
+                            
+                             Submit Research Results
+                             Search Tools
+                             Public Access Policy
+                             Data Services & Dev Tools
+                             About
+                             FAQs
+                             News
+                            
+                                
+                                    
+                                     Sign In
+                                    Create Account
+                                
+                                
+                            
+                        
+                    		
+                
+            
+        
+    
+
+
+
+    
+    
+        OSTI.GOV
+                
+                Journal Article: Oval intensification event observed by STARE and Viking
+    
+    
+
+
+
+                
+        
+
+        
+            
+            Title: Oval intensification event observed by STARE and Viking
+        
+        
+            
+            
+                Full Record
+                
+                    
+                    
+                        
+                        
+                    
+                
+                
+                Other Related Research
+                
+            
+        
+        
+                
+            
+            
+                
+                    
+                        
+                        
+                        
+                        
+    
+    Abstract
+        
+            The existence of polar arcs has been accepted for a long time, though there is no clear nomenclature, nor is there a good explanation for the origin or time behavior of these objects. The authors report on a thirty minute observation of such an event and its associated ionospheric response. The event, in the region of the auroral oval was seen by ultraviolet imagers on the Viking spacecraft, which provided time and spatially resolved images. Ground based observations were made by the coherent radar system STARE, which can make measurements of the electron drift velocities in the ionosphere over a large area. The authors were able to follow the optical and electron drift properties of this event as it developed. The arc was observed in conjunction with a band of electrojet, and other arcs. Shortly after its observation another electojet appeared, and moved to replace the previous system which disappeared. Following this there was a major intensification observed, or a substorm.
+        
+    
+
+                        
+
+    
+                Authors: 
+                Nielsen, E. [1]; 
+    Elphinstone, R.; 
+    Hearn, D.; 
+    Murphree, J.S. [2]; 
+    Potemra, T. [3]
+    
+    + Show Author Affiliations
+    
+        (Max-Planck-Institut fuer Aeronomie, Katlenburg-Lindau (Germany))
+        (Univ. of Calgary, Alberta (Canada))
+        (Johns Hopkins Univ., Laurel, MD (United States))
+        
+
+            
+        
+            Publication Date: 
+            Thu Apr 01 00:00:00 EST 1993
+        
+    
+                OSTI Identifier: 
+                6498983
+            
+            
+                    Alternate Identifier(s):
+                    OSTI ID: 6498983
+                
+            
+                                Resource Type: 
+                                Journal Article
+                            
+                        
+                        Journal Name: 
+                        Journal of Geophysical Research; (United States)
+                    
+                
+                            Additional Journal Information: 
+                            Journal Volume: 98:A4; Journal ID: ISSN 0148-0227
+                        
+                        
+                        Country of Publication: 
+                        United States
+                    
+                
+                        Language: 
+                        English
+                    
+                
+                        Subject: 
+                        71 CLASSICAL AND QUANTUM MECHANICS, GENERAL PHYSICS; IONOSPHERE; ELECTRON DRIFT; OPTICAL PROPERTIES; TIME DEPENDENCE; POLAR-CAP AURORAE; AURORAL OVAL; ELECTROJETS; RADAR; VIKING SPACE PROBES; AURORAE; CURRENTS; EARTH ATMOSPHERE; ELECTRIC CURRENTS; MEASURING INSTRUMENTS; PHYSICAL PROPERTIES; PLANETARY IONOSPHERES; RANGE FINDERS; SPACE VEHICLES; VEHICLES 661320*  -- Auroral, Ionospheric, & Magnetospheric Phenomena-- (1992-)
+                    
+                
+
+                        
+                            
+                            
+    
+    Citation Formats
+    
+    
+        
+          MLA
+          APA
+          Chicago
+          BibTeX
+        
+    
+    
+            
+        
+            
+                
+                    Nielsen, E., Elphinstone, R., Hearn, D., Murphree, J.S., and Potemra, T. Oval intensification event observed by STARE and Viking.  United States: N. p., 1993. 
+        Web.  doi:10.1029/92JA00901. 
+            
+             Copy to clipboard
+        
+            
+        
+            
+                
+                    Nielsen, E., Elphinstone, R., Hearn, D., Murphree, J.S., & Potemra, T. Oval intensification event observed by STARE and Viking.  United States.  doi:10.1029/92JA00901. 
+            
+             Copy to clipboard
+        
+                
+        
+            
+                
+                    Nielsen, E., Elphinstone, R., Hearn, D., Murphree, J.S., and Potemra, T. Thu .  
+        "Oval intensification event observed by STARE and Viking".  United States.  doi:10.1029/92JA00901.   
+            
+             Copy to clipboard
+        
+
+        
+            
+                
+                    
+@article{osti_6498983,
+  title        = {Oval intensification event observed by STARE and Viking},
+  author       = {Nielsen, E. and Elphinstone, R. and Hearn, D. and Murphree, J.S. and Potemra, T.},
+  abstractNote = {The existence of polar arcs has been accepted for a long time, though there is no clear nomenclature, nor is there a good explanation for the origin or time behavior of these objects. The authors report on a thirty minute observation of such an event and its associated ionospheric response. The event, in the region of the auroral oval was seen by ultraviolet imagers on the Viking spacecraft, which provided time and spatially resolved images. Ground based observations were made by the coherent radar system STARE, which can make measurements of the electron drift velocities in the ionosphere over a large area. The authors were able to follow the optical and electron drift properties of this event as it developed. The arc was observed in conjunction with a band of electrojet, and other arcs. Shortly after its observation another electojet appeared, and moved to replace the previous system which disappeared. Following this there was a major intensification observed, or a substorm.},
+  doi          = {10.1029/92JA00901},
+  journal      = {Journal of Geophysical Research; (United States)},
+  issn         = {0148-0227},
+  number       = ,
+  volume       = 98:A4,
+  place        = {United States},
+  year         = {Thu Apr 01 00:00:00 EST 1993},
+  month        = {Thu Apr 01 00:00:00 EST 1993}
+}
+    
+            
+             Copy to clipboard
+        
+            
+    
+
+    
+    
+
+
+                        
+                    
+                    
+                        
+                
+Journal Article:
+
+
+    DOI:  10.1029/92JA00901
+    
+
+        Other availability
+        
+                 Find in Google Scholar
+            
+            
+                 Search WorldCat to find libraries that may hold this journal
+            
+
+    Save / Share:
+    
+        
+        
+            Export Metadata  
+            
+                
+                    Endnote
+                    RIS
+                    CSV / Excel
+                    XML
+                    JSON
+                
+                        
+        
+        
+            Save to My Library
+                    
+                        
+                            You must Sign In or Create an Account in order to save documents to your library.
+                        
+                                
+                
+        
+            
+                
+                    
+                
+                    
+                
+                
+                
+                    
+                    
+                        
+                             LinkedIn
+                             Pinterest
+                             Tumblr
+                        
+                                
+                
+            
+        
+                
+    
+
+                    
+                
+            
+                    
+            
+            
+            
+                
+                
+                
+                
+                
+
+            
+            
+                    
+            
+            
+            
+            
+            
+            
+            
+                
+                    
+
+                        
+                            
+                                Similar records in OSTI.GOV collections:
+                                
+                                
+                                    
+                                        
+            
+                    Satellite and ground-based observations of a fading transpolar arc
+                    
+                        Journal Article
+                            Pellinen, R.J.
+                            ; Koskinen, H.E.J.
+                            ; Pulkkinen, T.I.
+                            ; ...  - Journal of Geophysical Research; (United States)
+                            
+                    
+                    Satellite and ground-based observations of the end phase of a transpolar arc event on September 25, 1986, are presented. The event was recorded by the UV imager of the Viking spacecraft during the time period from 2000 to 2110 UT. The transpolar arc was formed during a period of more than one hour of northward directed interplanetary magnetic field B{sub Z}. The arc started to fade when the IMF turned southward and a localized brightening of the auroral oval west of its nightside foot point was observed. Within a few minutes the activation was strongly enhanced. Magnetic disturbances below themore » activation were relatively weak, but at the EISCAT magnetometer stations a counterclockwise rotating equivalent current system, which can be interpreted as due to an upward directed filamentary field-aligned current, was observed to last about 10 min. The magnetic disturbance was fairly stable and did not move across the magnetometer chain during its existence. EISCAT observed a clear enhancement of E region electron density after 2100 UT, which was not associated with hard precipitation, as indicated by the absence of riometer absorption over Scandinavia. The EISCAT scan data on ionospheric horizontal ion drift velocity showed a localized region of eastward drift just north of Tromsoe, in agreement with the magnetometer recordings. Also the postmidnight auroral oval was brightened in a wide longitudinal range, and a weak westward current was observed flowing in the ionosphere by Soviet magnetometers below the bright region of the oval. Though the magnetic signatures below the activation west of the foot point indicate a cablelike upward field-aligned current, the authors do not interpret the phenomenon as a substorm.« less
+                        
+                            
+                                    DOI: 10.1029/JA095iA05p05817
+                                    
+                                                        
+                    
+                    
+                
+            
+        		
+    
+                                    
+                                        
+            
+                    Structure of auroral precipitation during a theta aurora from multisatellite observations
+                    
+                        Journal Article
+                            Feldstein, Y.I.
+                            ; Newell, P.T.
+                            ; Sandahl, I.
+                             - Journal of Geophysical Research
+                            
+                    
+                    A {theta} aurora previously discussed on the basis of Viking images (northern hemisphere) and DE 1 images (southern hemisphere) is reexamined in light of additional data, primarily the auroral plasma distribution as determined from the Viking, DMSP F6, and DMSP F7 satellites. This event, which occurred before a substorm expansion phase on August 3, 1986, appeared in the images to consist of a single arc along the morning side in the northern hemisphere and along the evening side in the southern hemisphere and was isolated from the auroral oval in both sets of images. On the basis of the auroralmore » plasma distribution inferred from three satellites, the brightest arcs do occur at the locations indicated by the imagers, both the arcs are in fact connected to the main oval with continuous precipitation, and weaker secondary arcs (not observed by the imagers) occur in the opposite hemisphere magnetically conjugate to the bright arcs. These observations support the interpretation of the {theta} aurora as occurring on closed field lines as a result of the expansion of the morning and evening sector ovals into the polar cap. A careful examination of the characteristics of the observed auroral energy plasma suggests additional conclusions. It appears that the ionospheric manifestation of the recently discovered low-energy electron layer can be identified with a complicated structure of soft precipitation at the poleward edge of the main precipitation region. Finally, unlike recent reports, the ions were not observed to have a cutoff in the polar cap that is any sharper than that of the electrons. 48 refs., 13 figs.« less
+                        
+                            
+                                    DOI: 10.1029/95JA00379
+                                    
+                                                        
+                    
+                    
+                
+            
+        		
+    
+                                    
+                                        
+            
+                    CDAW 9 analysis of magnetospheric events on May 3, 1986: Event C
+                    
+                        Journal Article
+                            Baker, D.N.
+                            ; Pulkkinen, T.I.
+                            ; McPherron, R.L.
+                            ; ...  - Journal of Geophysical Research; (United States)
+                            
+                    
+                    The ninth Coordinated Data Analysis Workshop focused upon several intervals within the PROMIS period. Event interval C comprised the period 0000-1200 UT on May 3, 1986, which was a highly distrubed time near the end of a geomagnetic storm interval. A very large substorm early in the period commenced at 0111 UT and had a peak AE index value of [approximately]1500 nT. Subsequent activity was lower, but at least three other substorms occurred at 2-3 hour intervals. The substorms on May 3 were well observed by a variety of satellites including ISEE 1,2 and IMP 8 in the magnetotail plusmore » SCATHA, GOES, GMS, and LANL spacecraft at or near geostationary orbit. A particularly important feature of the 0111 UT substorm was the simultaneous imaging of the southern auroral oval by DE 1 and of the northern auroral oval by Viking. The excellent constellation of spacecraft near local midnight in the radial range 5-9 R[sub E] made it possible to study the strong cross-tail current development during the expansion phase. A clear latitudinal separation ([ge]10[degrees]) of the initial region of auroral brightening and the region of intense westward electrojet current was identified. The combined ground, near-tail and imaging data for this event provided an unprecedented opportunity to investigate tail current development, field line mapping, and substorm onset mechanisms. Evidence is presented for strong current diversion within the near-tail plasma sheet during the late growth phase and strong current disruption and field-aligned current formation from deeper in the tail at substorm onset. The authors conclude that these results are consistent with a model of magnetic neutral line formation in the late growth phase which causes plasma sheet current diversion before the substorm onset. The expansion phase onset occurs later due to reconnection of lobelike magnetic field lines and roughly concurrent cross-tail disruption in the inner plasma sheet region. 52 refs., 14 figs. 1 tab.« less
+                        
+                            
+                                    DOI: 10.1029/92JA02475
+                                    
+                                                        
+                    
+                    
+                
+            
+        		
+    
+                                    
+                                        
+            
+                    Quiet-time intensifications along the poleward auroral boundary near midnight
+                    
+                        Journal Article
+                            Beaujardiere, O. de la
+                            ; Lyons, L.R.
+                            ; Ruohoniemi, J.M.
+                            ; ...  - Journal of Geophysical Research; (United States)
+                            
+                    
+                    Radar and optical measurements from Sondrestrom are combined with satellite and Goose Bay data in a study of the poleward edge of the nightside auroral oval during a quiet period. The B[sub y] and B[sub z] components of the interplanetary magnetic field were close to zero, and the B[sub x] component was [approximately]8 nT for more than 24 hours. On a large scale, the convection and precipitation patterns remained almost constant during this period; on a small scale, however, the conditions were quite dynamic. At 10- to 20-min intervals the arc that marked the poleward auroral boundary intensified, and amore » new arc appeared poleward of it. About once per hour, stronger intensifications were observed. One such event is examined in detail. The auroral arcs first appeared to dim, and then they brightened, with a factor of 10 increase in E region electron density. At the time of the brightening a new arc formed poleward of all the arcs. The arcs then drifted southward at velocities of [approximately]270 m/s. A plasma drift disturbance, characterized by a doubling of the southward velocity and a reversal in the east-west component, propagated westward at 900 m/s through the fields of view of the Sondrestrom and Goose Bay radars. A simultaneous satellite overpass close to the radars revealed the presence of an energetic ion event similar to the [open quotes]velocity dispersed ion structures[close quotes] observed on the Aureol satellite and presumed to be the signature of fast ion beams within the plasma sheet boundary layer. The stronger arc intensification events observed by the Sondrestrom radar are associated with an increase in plasma flow across the boundary between open and closed magnetic field lines. The authors interpret this increased flow as the ionospheric signature of abrupt, localized increases in the reconnection rate in the midnight sector. 41 refs., 11 figs.« less
+                        
+                            
+                                    DOI: 10.1029/93JA01947
+                                    
+                                                        
+                    
+                    
+                
+            
+        		
+    
+                                    
+                                        
+            
+                    CDAW-9 analysis of magnetospheric events on 3 May 1986: Event C. Technical report
+                    
+                        Technical Report
+                            Baker, D.N.
+                            ; Pulkkinen, T.I.
+                            ; McPherron, R.L.
+                            ; ... 
+                            
+                    
+                    The ninth Coordinated Data Analysis Workshop (CDAW-9) focussed upon several intervals within the PROMIS period (March-June 1986). Event interval C comprised the period 0000-1200 UT on 3 May 1986 which was a highly disturbed time near the end of a geomagnetic storm interval. A very large substorm early in the period commenced at 0111 UT and had a peak AE index value of approx. 1500 nT. Subsequent activity was lower, but at least three other substorms occurred at 2-3 hour intervals. The substorms on 3 May were well observed by a variety of satellites, including ISEE-1, -2, and IMP-8 inmore » the magnetotail plus SCATHA, GOES, GMS, and LANL spacecraft at or near geostationary orbit. A particularly important feature of the 0111 UT substorm was the simultaneous imaging of the southern auroral oval by DE-1 and of the northern oval by Viking. The excellent constellation of spacecraft near local midnight in the radial range 5-9 RE made it possible to study the strong cross-tail current development during the substorm growth phase and the current disruption and current wedge development during the expansion phase. The authors use a time-evolving magnetic field model to map observed auroral features out into the magnetospheric equatorial plane. There was both a dominant eastward and a weaker westward progression of activity following the expansion phase. A clear latitudinal separation of the initial region of auroral brightening and the region of intense westward electrojet current was identified.« less
+                        
+                                                        
+                    
+                    
+                
+            
+        		
+    
+                                                                         
+                                
+                                
+                            
+                        
+                                    
+                                    
+                                    
+                    
+                    
+                        
+                            
+                                
+                                     Similar Records
+                                
+                                
+                            
+                        
+                        
+                                
+                    
+                
+            
+
+            
+            
+            
+            
+        
+
+
+        
+    
+
+        
+
+
+
+
+
+
+
+
+	
+		
+                        
+			
+                            
+                                
+                                    
+                                        
+                                            
+                                        
+                                    
+                                    
+                                        
+                                            
+                                        
+                                    
+                                    
+                                        
+                                            
+                                        
+                                    
+                                
+                            
+			
+			
+			
+                            
+                                
+                                 Website Policies / Important Links
+                                 Contact Us

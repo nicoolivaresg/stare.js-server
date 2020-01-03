@@ -54,6 +54,18 @@ You can find the most basic full example in the [examples folder](/examples/).
 
 Please see the documentation [here](/docs/README.md).
 
+## Debug / logging
+
+StArE.js is powered by [debug](https://github.com/visionmedia/debug).
+In order to see all the debug output, run your app with the environment variable
+`DEBUG` including the desired scope.
+
+To see the output from all of StArE.js's debugging scopes you can use:
+
+```
+DEBUG=stare-js
+```
+
 ## Contributors
 
 - Roberto González-Ibáñez
@@ -64,3 +76,9 @@ Please see the documentation [here](/docs/README.md).
 
 ## License
 [Attribution 3.0 Chile (CC BY 3.0 CL)](https://creativecommons.org/licenses/by/3.0/cl/)
+
+## Todo
+- Documentation
+- metrics that requires html/text
+  - length.js
+  - perpiscuity.js

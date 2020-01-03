@@ -1,0 +1,929 @@
+Skip to content
+    App logo
+
+    
+      
+        
+          
+        
+      
+    
+    WRITE A POST
+    
+      Connect
+
+
+
+      
+    
+    
+      Notifications
+
+      
+    
+    
+      
+          Navigation menu
+
+      
+      
+        
+    
+      
+        Sign In/Up
+      
+    
+    
+      
+        Via Twitter
+      
+    
+    
+      
+        Via GitHub
+      
+    
+    
+      
+        All about dev.to
+      
+    
+  
+
+    
+  
+
+
+      
+      
+        loading...
+      
+    
+  
+
+
+  
+    
+
+
+
+
+
+
+  
+
+  
+    
+      
+      
+      
+        
+          
+          
+          
+        
+        
+      
+      
+          
+      
+      
+        
+          JavaScript, What Are You?
+        
+        
+          
+            
+            
+              
+              HowToCodejs
+            
+          
+            twitter logo
+
+            May 22 '18
+          ・4 min read
+          
+        
+          
+              #javascript
+              #beginners
+              #webdev
+          
+      
+      
+        
+
+
+
+originally published in codeburst.io by Raji Ayinla, who know develops content for howtocodejs.com. Want to learn JavaScript the fun way? Then come on down to howtocodejs.com.
+
+You're at a job interview, sitting in the HR office of WECode.js.
+The hiring manager clears her throat after glancing at your exquisitely detailed resume and asks, "What is JavaScript, Mr/s. JavaScript Developer?"
+
+"A single-threaded non-blocking asynchronous concurrent language," you answer.
+
+"Yes, but what does that mean and how would you explain that to, say, someone on the UX team?"
+
+"…"
+
+
+  
+  
+  Cut!
+
+
+To avoid the awkward blank stare followed by more computer science buzzwords, we're going to break down exactly what JavaScript is. If you're Mr/s. JavaScript Developer or a newbie who's intimidated by the notion of JavaScript callbacks, everything will be demystified by our web comic. But before that, let us unpack Mr/s. JavaScript Developer's first answer.
+
+
+  
+  
+  What is a single-threaded language?
+
+
+Simply put, a single threaded language uses a single call stack, meaning that it can only fire one event at a time. If you're not exactly sure how to conceptualize a call stack, just picture a Jenga stack.
+
+
+
+Say you've written a list of functions. JavaScript's runtime would then compile the script you've written and sequentially stack the functions like blocks within its call stack. Afterwards, each function that executes is taken from the top of the stack until it reaches the bottom of the stack. There is only one stack. This, ladies and gentlemen, is single-threading.
+
+
+  
+  
+  What is non-blocking, asynchronicity, and concurrency?
+
+
+Well, let us try to understand what blocking is first. In a nutshell, blocking is the traffic caused by too many synchronous calls. Imagine a narrow exit that funnels drivers into a single lane road. That road is guarded by a traffic police who only allows one car at a time to go beyond his stop sign.
+
+Now imagine the headache you'd have if you're the fifteenth car in line and you have to get to the emergency room. Similarly, websites coded with blocking code make for a clunky user interface.
+
+
+
+So we understand what blocking is. Non-blocking is the complete opposite of blocking. Instead of making synchronous calls, a non-blocking language like JavaScript uses asynchronous calls, or, in other words, an emergency lane that allows for a breakup of sequential order so that you can get to the hospital on time.
+
+
+  
+  
+  Here's where things get really interesting.
+
+
+By wrapping a JavaScript function within a Web API function like setTimeout(), we can let the "secret underworld" of the browser handle this function without forcing it onto the stack. This works because Web APIs are independent of JavaScript's runtime. This concept of having a third party handle code is what concurrency is all about. We use callbacks to make our programs dynamic and prevent the event loop from clogging up.
+
+We've mentioned Web APIs and an event loop. There's also a callback queue. If you're getting slightly confused, don't panic. The comic will explain everything.
+
+
+  
+  
+  Roles
+
+
+1.JavaScript runtime: a single customer service call operator. He reads from a script, makes the call, and files it onto the stack.
+
+2.Web APIs: a third party data store that holds a message for however long it is instructed to hold it.
+
+3.The callback queue: a loading dock for calls
+The event loop: a little green droid with one simple job - check if the stack is empty. If it's empty, take an event from the queue and place it onto the stack. Continue to do so while the condition is true.
+
+
+  
+  
+  The Comic
+
+
+
+
+On a very synchronous day, the data flow is restricted. The "call operator" or the JavaScript runtime has to manually log all of the calls. The call operator has no time to get to the more important functions, like calling his wife or rendering a web page.
+
+On a very asynchronous day, all the call operator has to do is load all of the Web API functions, then he can leave the task to both the Web APIs and the mini droid aka the event loop. The Web APIs store the callbacks until they are ready to be staged onto the call back queue. All the event loop (mini droid) has to do is check if the stack is empty and place the callback onto the stack. Meanwhile, the call operator can focus on more important functions, like dinner with the wife.
+
+
+  
+  
+  Conclusion
+
+
+You can see why JavaScript devs make a big fuss about callbacks. No one wants their runtime environment to be preoccupied with too many tasks. You can think of callbacks as Gwen Stefani's "Hollaback Girl." JavaScript's runtime sends a shout out to the Web APIs and performs other tasks while waiting for the hollaback, or, in our case, a callback.
+
+
+  
+  
+  Resources
+
+
+Philip Robert's awesome talk at JSConf EU 2014: https://www.youtube.com/watch?v=8aGhZQkoFbQ
+Vector images were Designed by Freepik
+
+
+
+      
+      
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    DISCUSS
+      (5)
+  
+  
+    
+      
+    
+    
+      
+        
+          
+            
+            
+            Copied to Clipboard
+          
+        
+        
+          
+            
+              Share to Twitter
+            
+          
+          
+            
+              Share to LinkedIn
+            
+          
+          
+            
+              Share to Reddit
+            
+          
+          
+            
+              Share to Hacker News
+            
+          
+          
+            
+              Share to Facebook
+            
+          
+        
+        
+          Share Post
+        
+        Report Abuse
+      
+    
+  
+
+
+    
+        
+  
+    
+      
+    
+  
+  
+    HowToCodejs
+    My JavaScript tutorials are like your best friend walking you through tough times - real nice and easy-like. None of that eye-glazing technobabble. Visit howtocodejs.com to start learning.
+    
+      
+        @howtocodejs
+      
+        
+           howtocodejs
+        
+        
+           www.howtocodejs.com
+        
+    
+  
+
+
+    
+      
+      
+        
+          
+
+
+  
+
+    
+    
+    
+  
+    
+    
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+    
+    
+    
+    
+  
+  
+    
+      CANCEL
+    PREVIEW
+    
+  
+
+
+          
+                      
+       
+      
+
+    
+
+
+      
+        
+          
+          
+            
+              Martin Häusler
+            
+          
+        
+          
+            
+          
+        
+  
+    
+      May 25 '18
+    
+  
+
+
+        
+          
+        
+        
+          
+            
+              Permalink
+            
+            
+              Settings
+            
+            
+              
+                Hide
+              
+            
+            
+              Moderate
+            
+            Report Abuse
+          
+        
+      
+      
+        
+
+Javascript is not concurrent. It's single threaded. Concepts like locks, semaphores, monitors and synchronization are neither part of the language nor part of the standard library.
+
+
+
+        
+          
+          
+        
+      
+      
+        
+          DELETE
+          EDIT
+        
+          REPLY
+      
+    
+      
+       
+      
+
+    
+
+
+      
+        
+          
+          
+            
+              rkfg
+            
+          
+        
+          
+            
+          
+        
+  
+    
+      May 27 '18
+    
+  
+
+
+        
+          
+        
+        
+          
+            
+              Permalink
+            
+            
+              Settings
+            
+            
+              
+                Hide
+              
+            
+            
+              Moderate
+            
+            Report Abuse
+          
+        
+      
+      
+        
+
+You're mistaking concurrency with parallelism. They're orthogonal really. A concurrent app may or may not be parallel, it utilizes small blocking routines that are picked up for execution by a scheduler. These routines may be executed on one or more threads and each only blocks the thread for a short while. It's also called "cooperative multitasking" (as opposed to "preemptive multitasking", where the OS decides when the thread is interrupted and which one runs next). So JS is concurrent AND single threaded. You can see it doing several tasks "at once", though really each one does a small step and returns to the event loop so that the next task can do its step. If you only use one thread, you don't need synchronization primitives you mentioned. Even if you use many threads with concurrency you may not need them if you don't have any global state (i.e. the tasks are "pure" in functional sense).
+
+
+
+        
+          
+          
+        
+      
+      
+        
+          DELETE
+          EDIT
+        
+          REPLY
+      
+    
+      
+       
+      
+
+    
+
+
+      
+        
+          
+          
+            
+              Martin Häusler
+            
+          
+        
+          
+            
+          
+        
+  
+    
+      May 27 '18
+    
+  
+
+
+        
+          
+        
+        
+          
+            
+              Permalink
+            
+            
+              Settings
+            
+            
+              
+                Hide
+              
+            
+            
+              Moderate
+            
+            Report Abuse
+          
+        
+      
+      
+        
+
+Dude, stop splitting hairs here. For all means and purposes in real life, concurrency and parallelism are synonyms. Ask 100 programmers what the difference is and 99 of them will tell you they are identical. And JS is definitly not parallel. JS even managed to deceive people into thinking that it is multi-threaded because they deliberately use the term "asynchronous" everywhere. I call that false advertising.
+
+
+
+        
+          
+          
+        
+      
+      
+        
+          DELETE
+          EDIT
+        
+          THREAD
+      
+    
+      
+
+    
+
+
+      
+        
+          
+          
+            
+              rkfg
+            
+          
+        
+          
+            
+          
+        
+  
+    
+      May 27 '18
+    
+  
+
+
+        
+          
+        
+        
+          
+            
+              Permalink
+            
+            
+              Settings
+            
+            
+              
+                Hide
+              
+            
+            
+              Moderate
+            
+            Report Abuse
+          
+        
+      
+      
+        
+
+They might be synonyms for some people but it's important to understand the fundamental differences. There's no false advertising here, if people misunderstand the terminology it's not a JS fault. JS is not parallel, that's absolutely true. It's concurrent. Concurrency is a design decision, it doesn't have anything to do with multitasking, parallel execution, threads etc. It's just small blocking callbacks on steroids if you wish. Everything is put into a callback and a supervising scheduler (a part of the same program, not the OS) chooses which one to execute.
+
+If some people want to believe in something that's not there, it's a sect, cargo cult, religion, you name it. I'd like to dig deeper and know the underlying truth instead of marketing bs or things pretending to be what they're not.
+
+Further reading, if you're interested: actor model, greenlets, coroutines (boost::asio or goroutines are good examples). There are different approaches to concurrency while parallelism isn't that diverse — it's just code that runs on different threads and managed by the OS. The context switching is also quite expensive, that's why concurrency is this popular, you can achieve almost-multitasking for almost no cost.
+
+
+
+        
+          
+          
+        
+      
+      
+        
+          DELETE
+          EDIT
+        
+          REPLY
+      
+    
+  
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+                      
+       
+      
+
+    
+
+
+      
+        
+          
+          
+            
+              Adrian B.G.
+            
+          
+        
+          
+            
+          
+            
+          
+        
+  
+    
+      May 22 '18
+    
+  
+
+
+        
+          
+        
+        
+          
+            
+              Permalink
+            
+            
+              Settings
+            
+            
+              
+                Hide
+              
+            
+            
+              Moderate
+            
+            Report Abuse
+          
+        
+      
+      
+        
+
+JS is life, and death, messiah and a devil in the same time. It will seduce you and then crush your nerves.
+
+Anyway, for the non-tech persons I would not delve into technical details of the language, but rather I would list them what can you do with it (I made a pretty neat list of types of projects on my blog too).
+
+
+
+        
+          
+          
+        
+      
+      
+        
+          DELETE
+          EDIT
+        
+          REPLY
+      
+    
+  
+
+
+    
+
+          
+        
+        
+          
+
+  code of conduct
+-
+report abuse
+
+
+
+        
+      
+  
+
+  
+      
+  
+    Classic DEV Post from Mar 13
+  
+  
+    
+  Mozilla launches Firefox Send (free encrypted file transfer)
+
+
+  
+    
+    Peter Kim Frank
+    
+  
+
+
+  
+    A thread to discuss Firefox Send.
+  
+
+     85
+     7
+
+
+
+  
+  
+      
+    
+      
+  
+  
+    Peter Kim Frank
+    
+  
+ 
+
+
+  
+
+
+    
+    
+    
+      
+        
+          
+        
+        
+          Playing with video scrubbing animations on the web
+          
+            Abhishek Ghosh - Dec 28
+          
+        
+      
+    
+    
+      
+        
+          
+        
+        
+          Vue composable - array pagination
+          
+            Daniel Poda 🇨🇦 - Dec 28
+          
+        
+      
+    
+    
+      
+        
+          
+        
+        
+          Two Sum
+          
+            Si - Dec 28
+          
+        
+      
+    
+    
+      
+        
+          
+        
+        
+          Yesterday I built Jess's modules and imports
+          
+            Adam Crockett - Dec 28
+          
+        
+      
+    
+
+
+
+
+  
+
+
+  
+    
+    
+      
+        
+          HowToCodejs
+          
+        
+      
+      
+        
+          @howtocodejs
+        
+      
+    
+    
+        My JavaScript tutorials are like your best friend walking you through tough times - real nice and easy-like. None of that eye-glazing technobabble. Visit howtocodejs.com to start learning.
+    
+    
+      
+    
+      
+
+
+  
+
+    
+      
+        joined
+      
+      
+        May 20, 2018
+      
+    
+  
+
+
+  
+        
+          
+
+Join dev.to
+Be a better developer. Free forever.
+
+        
+
+
+
+
+  
+
+
+
+  
+
+
+    
+  
+    
+      Home About Privacy Policy
+      Terms of Use Contact Code of Conduct
+      DEV Community copyright 2016 - 2019  🔥
+    
+  
+
+  
+
+    
+  
+    
+      
+    
+  
+  
+    
+    Join our DEV Community :)
+    
+      We're a place where coders share, stay up-to-date and grow their careers.
+    
+    
+       Auth With Twitter
+    
+    
+       Auth With GitHub
+    
+    
+      We strive for transparency and don't collect excess data.

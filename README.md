@@ -2,18 +2,19 @@
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status](https://travis-ci.com/d-salazar-se/stare-server.svg?token=3dfQx9MqsJy4zuoFuSEP&branch=master)](https://travis-ci.com/d-salazar-se/stare-server)
+<!-- [![Build Status][travis-image]][travis-url] -->
 [![Test Coverage][coveralls-image]][coveralls-url]
 
 <!-- obviously replace with stare urls -->
 [npm-image]: https://img.shields.io/npm/v/stare.js.svg
 [npm-url]: https://npmjs.org/package/stare.js
+[downloads-image]: https://img.shields.io/npm/dm/stare.js.svg
+[downloads-url]: https://npmjs.org/package/stare.js
 [travis-image]: https://img.shields.io/travis/expressjs/stare.js/master.svg
 [travis-url]: https://travis-ci.org/expressjs/stare.js
 [coveralls-image]: https://img.shields.io/coveralls/expressjs/stare.js/master.svg
 [coveralls-url]: https://coveralls.io/r/expressjs/stare.js?branch=master
-[downloads-image]: https://img.shields.io/npm/dm/stare.js.svg
-[downloads-url]: https://npmjs.org/package/stare.js
 
 ## Description
 StArE.js is an open source project intended to facilitate developers the creation of alternative visualizations of search engine results page (SERP). StArE.js provides a modular and extensible processing pipeline capable of (1) transforming SERP, (2) extracting features from individual search results, and (3) visualizing SERP in multiple ways.

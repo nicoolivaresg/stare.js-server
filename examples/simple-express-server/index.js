@@ -24,7 +24,7 @@ app.get('/:engine', (request, response) => {
   let engine = request.params.engine;
   let { query, pageNumber } = request.query;
 
-  let metrics = ['language', 'ranking', 'language', 'perspicuity', 'a', 'b'];
+  let metrics = ['ranking', 'language', 'perspicuity', 'a', 'b'];
 
   stare(engine, query, pageNumber, metrics)
     .then(result => {

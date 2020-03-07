@@ -1,5 +1,10 @@
 # StArE.js
 
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+[![Build Status][travis-image]][travis-url]
+[![Test Coverage][coveralls-image]][coveralls-url]
+
 StArE.js is an open source project intended to facilitate developers the creation of alternative visualizations of search engine results page (SERP). StArE.js provides a modular and extensible processing pipeline capable of (1) transforming SERP, (2) extracting features from individual search results, and (3) visualizing SERP in multiple ways.
 
   - Extensible
@@ -19,7 +24,7 @@ StArE.js is currently extended with the following plugins, all of them developed
 
 | Plugin | Function |
 | ------ | ------ |
-| Perpiscuity | Reading Ease for English and Perpiscuity for Spanish|
+| Perspicuity | Reading Ease for English and Perspicuity for Spanish|
 | Language | Detect the most probable language for a document
 | Length of Documents | Calculate the length in characters of a Document
 | Support for Google SERPs | Handler for SERPs obtained through the Google Custom Search JSON API
@@ -38,21 +43,21 @@ npm install stare-js
 ```js
 const stare = require('stare-js');
 
-
-// stare(searchEngine = '', query = '', pageNumber = 1, metrics = [], callback = function);
-stare('google', 'What is hello world?', 1, ['ranking', 'language'], (result, err) => {
-    if (err) {
-      throw err;
-    }
+// stare(searchEngine = '', query = '', pageNumber = 1, metrics = []);
+stare('google', 'What is hello world?', 1, ['ranking', 'language'])
+  .then(result => {
     console.log(result);
+  })
+  .catch(err => {
+    console.error(err);
   });
-````
+```
 
 You can find the most basic full example in the [examples folder](/examples/).
 
 ## Documentation
 
-Please see the documentation [here](/docs/README.md).
+Please see the full documentation [here](/docs/README.md).
 
 ## Debug / logging
 
@@ -69,16 +74,26 @@ DEBUG=stare-js
 ## Contributors
 
 - Roberto González-Ibáñez
-- Camila Márquez
-- Daniel Gacitúa
-- Franz Farbinger
-- Diego Salazar S.
+- [Camila Márquez](https://github.com/bellyster/)
+- [Daniel Gacitúa](https://github.com/dgacitua/)
+- [Franz Farbinger](https://github.com/DarkAnimat/)
+- [Diego Salazar S.](https://github.com/d-salazar-se/)
 
 ## License
-[Attribution 3.0 Chile (CC BY 3.0 CL)](https://creativecommons.org/licenses/by/3.0/cl/)
+[MIT](LICENSE)
+
+<!-- obviously replace with stare urls -->
+[npm-image]: https://img.shields.io/npm/v/body-parser.svg
+[npm-url]: https://npmjs.org/package/body-parser
+[travis-image]: https://img.shields.io/travis/expressjs/body-parser/master.svg
+[travis-url]: https://travis-ci.org/expressjs/body-parser
+[coveralls-image]: https://img.shields.io/coveralls/expressjs/body-parser/master.svg
+[coveralls-url]: https://coveralls.io/r/expressjs/body-parser?branch=master
+[downloads-image]: https://img.shields.io/npm/dm/body-parser.svg
+[downloads-url]: https://npmjs.org/package/body-parser
 
 ## Todo
 - Documentation
-- metrics that requires html/text
+- metrics that requires html/text (remove whitespaces produced by scraper)
   - length.js
-  - perpiscuity.js
+  - perspicuity.js

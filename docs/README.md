@@ -11,9 +11,8 @@
  * @param {string} query
  * @param {number} pageNumber
  * @param {array} metrics
- * @param {function} callback
  */
-function webSearch(engine, query, pageNumber, metrics, callback);
+function webSearch(engine, query, pageNumber, metrics);
 ````
 
 ## Current available options
@@ -21,7 +20,7 @@ function webSearch(engine, query, pageNumber, metrics, callback);
 ```js
 var configurableOptions = {
   /* Path where the temporal html/txt files will be saved to use to calculate metrics */
-  tempFilesPath: '.',
+  tempFilesPath: './temp/',
   /* Create your own metrics and include them in the array so they can be use */
   personalMetrics: []
 };
@@ -35,9 +34,8 @@ Returns the language of the document. [Uses the Node Language Detect package](ht
 ### Length
 Length of the document which considers only the number of characters in the text of the document.
 
-### Perpiscuity
-Perpiscuity or Reading Ease (English) the document based on Flesh 1984 (en)
-Szigriszt 1992 (es).
+### Perspicuity
+Perspicuity or Reading Ease (English) the document based on Flesh 1984 (en) and Szigriszt 1992 (es).
 
 ### Ranking
 Ranking of the document in the query results pages (SERP), considering all the documents.
@@ -63,8 +61,8 @@ function getResultPages(query, pageNumber) {
 }
 
 /**
- * The result pages obtained in the function above.
- * return {object}
+ * @param {Object} resultPages - The result pages obtained in the function above.
+ * return {Object}
  */
 function processAndFormat(resultPages) {
   /* Must return the following format */
@@ -90,7 +88,7 @@ module.exports = {
 };
 ````
 
-### Metrics
+### Metrics
 
 
 - Each metric must be on his own separate file.
@@ -109,13 +107,14 @@ module.exports = {
  */
 function calculate(stareDocument, opts) {
   return new Promise((resolve, reject) => {
+    
     /* Do some stuff */
+    
     resolve({
-      name: /* metric name */,
+      name: /* metric name, mustn't hace spaces */,
       index: opts.index,
       value: /* final value goes here */
     });
-    reject(false);
   })
 };
 

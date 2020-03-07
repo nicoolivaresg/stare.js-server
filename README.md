@@ -83,14 +83,14 @@ DEBUG=stare-js
 [MIT](LICENSE)
 
 <!-- obviously replace with stare urls -->
-[npm-image]: https://img.shields.io/npm/v/body-parser.svg
-[npm-url]: https://npmjs.org/package/body-parser
-[travis-image]: https://img.shields.io/travis/expressjs/body-parser/master.svg
-[travis-url]: https://travis-ci.org/expressjs/body-parser
-[coveralls-image]: https://img.shields.io/coveralls/expressjs/body-parser/master.svg
-[coveralls-url]: https://coveralls.io/r/expressjs/body-parser?branch=master
-[downloads-image]: https://img.shields.io/npm/dm/body-parser.svg
-[downloads-url]: https://npmjs.org/package/body-parser
+[npm-image]: https://img.shields.io/npm/v/stare.js.svg
+[npm-url]: https://npmjs.org/package/stare.js
+[travis-image]: https://img.shields.io/travis/expressjs/stare.js/master.svg
+[travis-url]: https://travis-ci.org/expressjs/stare.js
+[coveralls-image]: https://img.shields.io/coveralls/expressjs/stare.js/master.svg
+[coveralls-url]: https://coveralls.io/r/expressjs/stare.js?branch=master
+[downloads-image]: https://img.shields.io/npm/dm/stare.js.svg
+[downloads-url]: https://npmjs.org/package/stare.js
 
 ## Todo
 - Documentation

@@ -1,10 +1,21 @@
-# StArE.js
+# StArE.js (Node.js Server version)
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Build Status][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
+<!-- obviously replace with stare urls -->
+[npm-image]: https://img.shields.io/npm/v/stare.js.svg
+[npm-url]: https://npmjs.org/package/stare.js
+[travis-image]: https://img.shields.io/travis/expressjs/stare.js/master.svg
+[travis-url]: https://travis-ci.org/expressjs/stare.js
+[coveralls-image]: https://img.shields.io/coveralls/expressjs/stare.js/master.svg
+[coveralls-url]: https://coveralls.io/r/expressjs/stare.js?branch=master
+[downloads-image]: https://img.shields.io/npm/dm/stare.js.svg
+[downloads-url]: https://npmjs.org/package/stare.js
+
+## Description
 StArE.js is an open source project intended to facilitate developers the creation of alternative visualizations of search engine results page (SERP). StArE.js provides a modular and extensible processing pipeline capable of (1) transforming SERP, (2) extracting features from individual search results, and (3) visualizing SERP in multiple ways.
 
   - Extensible
@@ -36,15 +47,15 @@ You can create your own extensions (metrics and serp support) as is explained in
 ## Installation
 
 ```bash
-npm install stare-js
+npm install stare.js
 ```
 ## How to use
 
 ```js
-const stare = require('stare-js');
+const stare = require('stare.js')(...options);
 
 // stare(searchEngine = '', query = '', pageNumber = 1, metrics = []);
-stare('google', 'What is hello world?', 1, ['ranking', 'language'])
+stare('google', 'What is love?', 1, ['ranking', 'language'])
   .then(result => {
     console.log(result);
   })
@@ -68,7 +79,7 @@ In order to see all the debug output, run your app with the environment variable
 To see the output from all of StArE.js's debugging scopes you can use:
 
 ```
-DEBUG=stare-js
+DEBUG=stare.js
 ```
 
 ## Contributors
@@ -81,16 +92,6 @@ DEBUG=stare-js
 
 ## License
 [MIT](LICENSE)
-
-<!-- obviously replace with stare urls -->
-[npm-image]: https://img.shields.io/npm/v/stare.js.svg
-[npm-url]: https://npmjs.org/package/stare.js
-[travis-image]: https://img.shields.io/travis/expressjs/stare.js/master.svg
-[travis-url]: https://travis-ci.org/expressjs/stare.js
-[coveralls-image]: https://img.shields.io/coveralls/expressjs/stare.js/master.svg
-[coveralls-url]: https://coveralls.io/r/expressjs/stare.js?branch=master
-[downloads-image]: https://img.shields.io/npm/dm/stare.js.svg
-[downloads-url]: https://npmjs.org/package/stare.js
 
 ## Todo
 - Documentation

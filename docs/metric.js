@@ -1,9 +1,11 @@
 'use strict';
-const scrapper = require('../scrapper');
-var debug = require('debug')('stare.js:server/metrics/length');
+
+/* Your imports here */
+
+/* Some more stuff over here */
 
 /**
- * Calculates the length (number of chars) of the document.
+ * <Your function description>
  *
  * @async
  * @param {Object} stareDocument  The Document data with stare format
@@ -21,21 +23,13 @@ var debug = require('debug')('stare.js:server/metrics/length');
  */
 function calculate(stareDocument, opts) {
   return new Promise((resolve, reject) => {
-    scrapper.text(stareDocument.link)
-      .then(data => {
-        resolve({
-          name: 'length',
-          index: opts.index,
-          value: data.text.length + 1
-        });
-      })
-      .catch(err => {
-        resolve({
-          name: 'length',
-          index: opts.index,
-          value: -1 // error
-        });
-      });
+    /* Some calculations */
+    
+    resolve({
+      name: '<metric name, normally the same as the filename>',
+      index: opts.index,
+      value: <your_calculated_value>
+    });
   });
 };
 

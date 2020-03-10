@@ -1,49 +1,14 @@
 # StArE.js (Node.js Server version)
 
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
-[![Build Status](https://travis-ci.com/d-salazar-se/stare-server.svg?token=3dfQx9MqsJy4zuoFuSEP&branch=master)](https://travis-ci.com/d-salazar-se/stare-server)
-<!-- [![Build Status][travis-image]][travis-url] -->
-[![Test Coverage][coveralls-image]][coveralls-url]
+![npm](https://img.shields.io/npm/v/stare.js)
+![npm](https://img.shields.io/npm/dm/stare.js)
+[![Build Status](https://travis-ci.com/d-salazar-se/stare-server.svg?branch=master)](https://travis-ci.com/d-salazar-se/stare-server)
+[![Coverage Status](https://coveralls.io/repos/github/d-salazar-se/stare.js-server/badge.svg?branch=master)](https://coveralls.io/github/d-salazar-se/stare.js-server?branch=master)
+![NPM](https://img.shields.io/npm/l/stare.js)
 
-<!-- obviously replace with stare urls -->
-[npm-image]: https://img.shields.io/npm/v/stare.js.svg
-[npm-url]: https://npmjs.org/package/stare.js
-[downloads-image]: https://img.shields.io/npm/dm/stare.js.svg
-[downloads-url]: https://npmjs.org/package/stare.js
-[travis-image]: https://img.shields.io/travis/expressjs/stare.js/master.svg
-[travis-url]: https://travis-ci.org/expressjs/stare.js
-[coveralls-image]: https://img.shields.io/coveralls/expressjs/stare.js/master.svg
-[coveralls-url]: https://coveralls.io/r/expressjs/stare.js?branch=master
 
 ## Description
 StArE.js is an open source project intended to facilitate developers the creation of alternative visualizations of search engine results page (SERP). StArE.js provides a modular and extensible processing pipeline capable of (1) transforming SERP, (2) extracting features from individual search results, and (3) visualizing SERP in multiple ways.
-
-  - Extensible
-  - Modular
-  - Potentially Scalable
-  - Open Source
-  - Reduce your Codelines
-
-## Resources
-
-* [npm package](https://www.npmjs.com/package/stare.js)
-* [Examples](/examples/)
-
-## Extensions
-
-StArE.js is currently extended with the following plugins, all of them developed as part of the proof of concept.
-
-| Plugin | Function |
-| ------ | ------ |
-| Perspicuity | Reading Ease for English and Perspicuity for Spanish|
-| Language | Detect the most probable language for a document
-| Length of Documents | Calculate the length in characters of a Document
-| Support for Google SERPs | Handler for SERPs obtained through the Google Custom Search JSON API
-| Support for Bing SERPs | Handler for SERPs obtained through the Bing web search API
-| Support for Ecosia SERPs | Handler for SERPs obtained from ecosia through a web scrapper
-
-You can create your own extensions (metrics and serp support) as is explained in the [docs](/docs).
 
 ## Installation
 
@@ -67,11 +32,36 @@ stare('google', 'What is love?', 1, ['ranking', 'language'])
 
 You can find the most basic full example in the [examples folder](/examples/).
 
-## Documentation
+## Resources
+
+* [npm package](https://www.npmjs.com/package/stare.js)
+* [Documentation](/docs/)
+* [Examples](/examples/)
+
+## Extensions
+
+StArE.js is currently extended with the following plugins:
+
+| SERP | Function name | Description | Documentation |
+| ------ | ------ | ------ | ------ |
+| Google | <code>google</code> | Handler for SERPs obtained through the Google Custom Search JSON API | See docs |
+| Bing | <code>bing</code> | Handler for SERPs obtained through the Bing web search API | See docs |
+| Ecosia | <code>ecosia</code> | Handler for SERPs obtained from ecosia through a web scrapper | See docs |
+| ElasticSearch | <code>elasticsearch</code> | Handler for SERPs obtained from ElasticSearch (only basic support) via request-promise | See docs |
+
+
+| Metrics | Metric name | Description | Documentation |
+| ------ | ------ | ------ | ------ |
+| Perspicuity | <code>perspicuity</code> | Reading Ease for English and Perspicuity for Spanish | See docs |
+| Language | <code>language</code> | Detect the most probable language for a document | See docs |
+| Length of Documents | <code>length</code> | Calculate the length in characters of a Document | See docs |
+| Ranking | <code>ranking</code> | Calculate the length in characters of a Document | See docs |
+
+You can create your own extensions (metrics and serp support) as is explained in the [docs](/docs).
 
 Please see the full documentation [here](/docs/README.md).
 
-## Debug / logging
+## Debug / Logging
 
 StArE.js is powered by [debug](https://github.com/visionmedia/debug).
 In order to see all the debug output, run your app with the environment variable
@@ -96,6 +86,8 @@ DEBUG=stare.js
 
 ## Todo
 - Documentation
-- metrics that requires html/text (remove whitespaces produced by scraper)
-  - length.js
-  - perspicuity.js
+- More examples
+- Travis-CI integration
+- Test script
+- metrics/perspicuity Support for languages other than ['en-us', 'es', 'fr']
+- personal SERP support (like metrics)

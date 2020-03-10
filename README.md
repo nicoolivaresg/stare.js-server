@@ -44,22 +44,22 @@ StArE.js is currently extended with the following plugins:
 
 | SERP | Function name | Description | Documentation |
 | ------ | ------ | ------ | ------ |
-| Google | <code>google</code> | Handler for SERPs obtained through the Google Custom Search JSON API | See docs |
-| Bing | <code>bing</code> | Handler for SERPs obtained through the Bing web search API | See docs |
-| Ecosia | <code>ecosia</code> | Handler for SERPs obtained from ecosia through a web scrapper | See docs |
-| ElasticSearch | <code>elasticsearch</code> | Handler for SERPs obtained from ElasticSearch (only basic support) via request-promise | See docs |
+| Google | <code>google</code> | Handler for SERPs obtained through the Google Custom Search JSON API | [See docs](/docs/SERP.md#google) |
+| Bing | <code>bing</code> | Handler for SERPs obtained through the Bing web search API | [See docs](/docs/SERP.md#bing) |
+| Ecosia | <code>ecosia</code> | Handler for SERPs obtained from ecosia through a web scrapper | [See docs](/docs/SERP.md#ecosia) |
+| ElasticSearch | <code>elasticsearch</code> | Handler for SERPs obtained from ElasticSearch (only basic support) via request-promise | [See docs](/docs/SERP.md#elasticsearch) |
 
 
 | Metrics | Metric name | Description | Documentation |
 | ------ | ------ | ------ | ------ |
-| Perspicuity | <code>perspicuity</code> | Reading Ease for English and Perspicuity for Spanish | See docs |
-| Language | <code>language</code> | Detect the most probable language for a document | See docs |
-| Length of Documents | <code>length</code> | Calculate the length in characters of a Document | See docs |
-| Ranking | <code>ranking</code> | Calculate the length in characters of a Document | See docs |
+| Perspicuity | <code>perspicuity</code> | Reading Ease for English and Perspicuity for Spanish | [See docs](/docs/METRICS.md#perspicuity) |
+| Language | <code>language</code> | Detect the most probable language for a document | [See docs](/docs/METRICS.md#language) |
+| Length of Documents | <code>length</code> | Calculate the length in characters of a Document | [See docs](/docs/METRICS.md#length) |
+| Ranking | <code>ranking</code> | Calculate the length in characters of a Document | [See docs](/docs/METRICS.md#ranking) |
 
-You can create your own extensions (metrics and serp support) as is explained in the [docs](/docs).
+As is explained in the docs you can create your own extensions for [SERP](/docs/SERP.md#create-your-own-extensions) and [metrics](/docs/METRICS.md#create-your-own-extensions) support.
 
-Please see the full documentation [here](/docs/README.md).
+Please see the full documentation [here](/docs/INDEX.md).
 
 ## Debug / Logging
 

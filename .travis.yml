@@ -8,8 +8,7 @@ git:
   clone: false
 
 before_script:
-  - npm install -g jest
-  - npm install --dev @babel/core @babel/preset-env babel-jest
+  - npm install --save-dev jest @babel/core @babel/preset-env babel-jest
 
 branches:
   only:

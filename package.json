@@ -1,5 +1,5 @@
 {
-  "name": "stare-server",
+  "name": "stare.js-server",
   "version": "2.0.0",
   "description": "Node.js serp visualization server",
   "keywords": [
@@ -14,11 +14,11 @@
     "README.md"
   ],
   "scripts": {
-    "test": "jest test/stare.test.js"
+    "test:coveralls": "jest test/stare.test.js --coverage --coverageReporters=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/d-salazar-se/stare-server.git"
+    "url": "git+https://github.com/d-salazar-se/stare.js-server.git"
   },
   "contributors": [
     {
@@ -28,9 +28,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/d-salazar-se/stare-server/issues"
+    "url": "https://github.com/d-salazar-se/stare.js-server/issues"
   },
-  "homepage": "https://github.com/d-salazar-se/stare-server#readme",
+  "homepage": "https://github.com/d-salazar-se/stare.js-server#readme",
   "dependencies": {
     "azure-cognitiveservices-websearch": "^2.0.0",
     "cheerio": "^1.0.0-rc.3",
@@ -47,6 +47,7 @@
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
-    "babel-jest": "^25.1.0"
+    "babel-jest": "^25.1.0",
+    "coveralls": "^3.0.9"
   }
 }

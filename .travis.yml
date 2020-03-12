@@ -1,17 +1,25 @@
+sudo: false
+
 language: node_js
+
+node_js:
+  - node
 
 os:
   - osx
   - linux
-
-git:
-  clone: false
-
-before_script:
-  - npm install --save-dev jest @babel/core @babel/preset-env babel-jest
 
 branches:
   only:
   - master
   - develop
   - ci
+
+before_script:
+  - npm install --save-dev jest @babel/core @babel/preset-env babel-jest
+
+script:
+  - npm run test:coveralls
+
+notifications:
+  email: false

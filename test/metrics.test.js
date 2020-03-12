@@ -8,9 +8,9 @@ const ranking = require('../lib/metrics/ranking');
 
 /* Same SERP response for every test */
 const stareDocument = {
-  title: 'Testing document',
-  link: path.resolve(__dirname, './test-document.txt'),
-  snippet: 'This is a testing snippet',
+  title: 'StArE.js — Search engine visuAlization packagE - Usach',
+  link: 'https://starejs.informatica.usach.cl/',
+  snippet: 'StArE.js: An extensible open source toolkit for visualizing search engine results. ... Supervised by González-Ibáñez, R. Departamento de Ingeniería Informática, ...',
   image: null
 };
 
@@ -30,7 +30,7 @@ test(`Feature 'language' from default object`, () => {
     expect(data).toMatchObject({
       'name': 'language',
       'index': 1,
-      'value': 'english'
+      'value': expect.any(String)
     });
   });
 });

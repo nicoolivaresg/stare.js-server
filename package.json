@@ -14,6 +14,7 @@
     "README.md"
   ],
   "scripts": {
+    "test": "jest test/stare.test.js",
     "test:coveralls": "jest test/stare.test.js --coverage --coverageReporters=text-lcov | coveralls"
   },
   "repository": {

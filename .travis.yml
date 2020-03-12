@@ -1,5 +1,9 @@
 language: node_js
 
+os:
+  - osx
+  - linux
+
 git:
   clone: false
 

@@ -75,7 +75,7 @@ DEBUG=stare.js
 
 ## Contributors
 
-- Roberto González-Ibáñez
+- [Roberto González-Ibáñez](https://github.com/rgonzal/)
 - [Camila Márquez](https://github.com/bellyster/)
 - [Daniel Gacitúa](https://github.com/dgacitua/)
 - [Franz Farbinger](https://github.com/DarkAnimat/)

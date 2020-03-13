@@ -16,6 +16,7 @@ branches:
   - ci
 
 script:
+  - npm install jest
   - npm run test:coveralls
 
 notifications:

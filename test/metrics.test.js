@@ -24,47 +24,48 @@ const opts = {
   index: 1
 };
 
-/* Features / Metrics */
-test(`Feature 'language' from default object`, () => {
-  return language(stareDocument, opts).then(data => {
-    expect(data).toMatchObject({
-      'name': 'language',
-      'index': 1,
-      'value': expect.any(String)
+describe('metrics', () => {
+  test(`Feature 'language' from default object`, () => {
+    return language(stareDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'language',
+        'index': 1,
+        'value': expect.any(String)
+      });
     });
   });
-});
 
-// test(`Feature 'length' from default object`, () => {
-//   return length(stareDocument, opts).then(data => {
-//     expect(data).toMatchObject({
-//       'name': 'length',
-//       'index': 1,
-//       'value': expect.any(Number)
-//     });
-//     expect(data.value).toBeGreaterThan(-1);
-//   });
-// });
+  test(`Feature 'length' from default object`, () => {
+    return length(stareDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'length',
+        'index': 1,
+        'value': expect.any(Number)
+      });
+      expect(data.value).toBeGreaterThan(-1);
+    });
+  });
 
-// test(`Feature 'perspicuity' from default object`, () => {
-//   return perspicuity(stareDocument, opts).then(data => {
-//     expect(data).toMatchObject({
-//       'name': 'perspicuity',
-//       'index': 1,
-//       'value': expect.any(Number)
-//     });
-//   });
+  test(`Feature 'perspicuity' from default object`, () => {
+    return perspicuity(stareDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'perspicuity',
+        'index': 1,
+        'value': expect.any(Number)
+      });
+    });
 
-//   expect(data.value).toBeGreaterThanOrEqual(0);
-//   expect(data.value).toBeLessThanOrEqual(207);
-// });
+    expect(data.value).toBeGreaterThanOrEqual(0);
+    expect(data.value).toBeLessThanOrEqual(207);
+  });
 
-test(`Feature 'ranking' from default object`, () => {
-  return ranking(stareDocument, opts).then(data => {
-    expect(data).toMatchObject({
-      'name': 'ranking',
-      'index': 1,
-      'value': 2
+  test(`Feature 'ranking' from default object`, () => {
+    return ranking(stareDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'ranking',
+        'index': 1,
+        'value': 2
+      });
     });
   });
 });

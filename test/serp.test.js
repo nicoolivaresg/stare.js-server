@@ -19,19 +19,20 @@ function toBeStareDocument(data) {
     expect(data).toHaveProperty(['documents', 0, 'image']);
   }
 }
+describe('metrics', () => {
+  test(`SERP 'bing' for query=jest and pageNumber=1`, () => {
+    return bing('jest', 1).then(data => toBeStareDocument);
+  });
 
-test(`SERP 'bing' for query=jest and pageNumber=1`, () => {
-  return bing('jest', 1).then(data => toBeStareDocument);
-});
+  test(`SERP 'ecosia' for query=jest and pageNumber=1`, () => {
+    return ecosia('jest', 1).then(data => toBeStareDocument);
+  });
 
-test(`SERP 'ecosia' for query=jest and pageNumber=1`, () => {
-  return ecosia('jest', 1).then(data => toBeStareDocument);
-});
+  test(`SERP 'elasticsearch' for query=jest and pageNumber=1`, () => {
+    return elasticsearch('jest', 1).then(data => toBeStareDocument);
+  });
 
-test(`SERP 'elasticsearch' for query=jest and pageNumber=1`, () => {
-  return elasticsearch('jest', 1).then(data => toBeStareDocument);
-});
-
-test(`SERP 'google' for query=jest and pageNumber=1`, () => {
-  return google('jest', 1).then(data => toBeStareDocument);
+  test(`SERP 'google' for query=jest and pageNumber=1`, () => {
+    return google('jest', 1).then(data => toBeStareDocument);
+  });
 });

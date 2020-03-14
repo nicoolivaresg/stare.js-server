@@ -19,7 +19,8 @@ function toBeStareDocument(data) {
     expect(data).toHaveProperty(['documents', 0, 'image']);
   }
 }
-describe('metrics', () => {
+
+describe('Happy cases for SERP c:', () => {
   test(`SERP 'bing' for query=jest and pageNumber=1`, () => {
     return bing('jest', 1).then(data => toBeStareDocument);
   });

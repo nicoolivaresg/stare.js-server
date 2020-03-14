@@ -1,13 +1,21 @@
 'use strict';
 
 const path  = require('path');
+const getMetrics = require('../lib/metrics/');
 const language = require('../lib/metrics/language');
 const length = require('../lib/metrics/length');
 const perspicuity = require('../lib/metrics/perspicuity');
 const ranking = require('../lib/metrics/ranking');
 
 /* Same SERP response for every test */
-const stareDocument = {
+const stareValidDocument = {
+  title: 'StArE.js — Search engine visuAlization packagE - Usach',
+  link: 'https://starejs.informatica.usach.cl/',
+  snippet: 'StArE.js: An extensible open source toolkit for visualizing search engine results. ... Supervised by González-Ibáñez, R. Departamento de Ingeniería Informática, ...',
+  image: null
+};
+
+const stareInvalidDocument = {
   title: 'StArE.js — Search engine visuAlization packagE - Usach',
   link: 'https://starejs.informatica.usach.cl/',
   snippet: 'StArE.js: An extensible open source toolkit for visualizing search engine results. ... Supervised by González-Ibáñez, R. Departamento de Ingeniería Informática, ...',
@@ -24,9 +32,9 @@ const opts = {
   index: 1
 };
 
-describe('metrics', () => {
-  test(`Feature 'language' from default object`, () => {
-    return language(stareDocument, opts).then(data => {
+describe('Feature Happy cases', () => {
+  test(`Feature 'language' with valid stareDocument object`, () => {
+    return language(stareValidDocument, opts).then(data => {
       expect(data).toMatchObject({
         'name': 'language',
         'index': 1,
@@ -35,8 +43,8 @@ describe('metrics', () => {
     });
   });
 
-  test(`Feature 'length' from default object`, () => {
-    return length(stareDocument, opts).then(data => {
+  test(`Feature 'length' with valid stareDocument object`, () => {
+    return length(stareValidDocument, opts).then(data => {
       expect(data).toMatchObject({
         'name': 'length',
         'index': 1,
@@ -46,8 +54,8 @@ describe('metrics', () => {
     });
   });
 
-  test(`Feature 'perspicuity' from default object`, () => {
-    return perspicuity(stareDocument, opts).then(data => {
+  test(`Feature 'perspicuity' with valid stareDocument object`, () => {
+    return perspicuity(stareValidDocument, opts).then(data => {
       expect(data).toMatchObject({
         'name': 'perspicuity',
         'index': 1,
@@ -59,13 +67,33 @@ describe('metrics', () => {
     expect(data.value).toBeLessThanOrEqual(207);
   });
 
-  test(`Feature 'ranking' from default object`, () => {
-    return ranking(stareDocument, opts).then(data => {
+  test(`Feature 'ranking' with valid stareDocument object`, () => {
+    return ranking(stareValidDocument, opts).then(data => {
       expect(data).toMatchObject({
         'name': 'ranking',
         'index': 1,
         'value': 2
       });
     });
+  });
+});
+
+describe('Feature Sad cases', () => {
+  test('getMetrics() without stareDocument and empty metrics array', () => {
+    return getMetrics({}, []).then(data => {
+      expect(data).toEqual([]);
+    })
+  });
+
+  test('getMetrics() without stareDocument.', () => {
+    return getMetrics({}, ['language', 'length', 'perspicuity', 'ranking']).then(data => {
+      expect(data.length).toEqual(0);
+    })
+  });
+
+  test('getMetrics({stuff}, [stuff]) with both valid args', () => {
+    return getMetrics({}, ['language', 'length', 'perspicuity', 'ranking']).then(data => {
+      expect(data.length).toEqual(4);
+    })
   });
 });

@@ -16,6 +16,7 @@ branches:
   - ci
 
 script:
+  - npm install googleapis ms-rest-azure azure-cognitiveservices-websearch
   - npm install jest
   - npm run test:coveralls
 

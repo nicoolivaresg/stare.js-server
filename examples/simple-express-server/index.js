@@ -14,9 +14,16 @@ const myMetrics = {
 };
 
 const stare = require('../..')({
-  engines: ['google'],
+  engines: ['google', 'solr'],
   tempFilesPath: './my-personal-temp',
-  personalMetrics: myMetrics
+  personalMetrics: myMetrics,
+  solr: {
+    baseUrl: 'http://localhost:8983',
+    core: 'stare',
+    titleProperty: 'name',
+    snippetProperty: 'directed_by',
+    imageProperty: ''
+  }
 });
 
 app.get('/:engine', (request, response) => {

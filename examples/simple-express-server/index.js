@@ -19,9 +19,9 @@ const stare = require('../..')({
   personalMetrics: myMetrics,
   solr: {
     baseUrl: 'http://localhost:8983',
-    core: 'stare',
+    core: 'techproducts',
     titleProperty: 'name',
-    snippetProperty: 'directed_by',
+    snippetProperty: 'series_t',
     imageProperty: ''
   }
 });

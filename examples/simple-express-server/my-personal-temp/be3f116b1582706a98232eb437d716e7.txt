@@ -1,0 +1,20 @@
+•••        ⚡ LatestJavaScriptVue.jsReactAngularCSSGatsby ↓ Resources  Node.js  TypeScript  Svelte  Ionic  Stencil  RxJS  Redux  Testing  GraphQL  Workflow  SVG  Electron  Flow  Jekyll  Sass  HTML  Web Components  Flutter  Polymer TypeScriptSvelteNode.jsRxJSIonicStencilFlowReduxTestingFlutterJekyllSassHTMLSVGWeb ComponentsElectron.jsPolymerWorkflow LightDarkSolarizedSolarized Dark #testingIntroduction to Testing With JestMatthew Garcia            Jest is a JavaScript testing framework requiring little to no configuration. Here’s a quick post to get you up and running with it.Setting Up Jest Are you using create-react-app? If so, Jest is already installed, so you can skip this part. Thanks, vertical integration!It’s pretty straightforward. Install it via Yarn (or NPM):yarn add --dev jestAnd add a script for it in package.json:"scripts": {
+  "test": "jest"
+}If you wanna use Babel in your tests, just install babel-jest:yarn add --dev babel-jest— Sorry to interrupt this program! 📺If you're into learning React in a comprehensive way, I highly recommend you try Wes Bos' React for Beginners or  Fullstack Advanced React & GraphQL  course.Given the current situation with COVID-19, times are hard for most of us, but if you're stuck at home you can perhaps use that extra time to work on your React skills. Wes put all of his courses at 50% off to help out with the current challenge we're facing.Plus, these are affiliate links, so if you purchase a course you help Alligator.io continue to exist at the same time! 🙏- Seb, ✌️+❤️Creating Test FilesJest will treat any file that ends in .test.js or .spec.js as a test file. So, if you have a file called divide.js, you can put a divide.test.js next to it in the same directory and Jest will pick it up when it runs. Jest will also consider files that are in a __TESTS__ folder to be test files, if you want to keep your tests separate.Writing TestsJest injects a number of globals into test files, so there’s nothing to import other than the stuff you want to test. So, if you have a divide.js like:export default function divide(dividend, divisor) {
+  if (divisor === 0) {
+    throw new Error('Division by zero.');
+  }
+  return dividend / divisor;
+}
+Your divide.test.js would look something like:import divide from './divide';
+
+// Describe the test and wrap it in a function.
+it('divides down to the nearest integer.', () => {
+  const result = divide(5, 2);
+
+  // Jest uses matchers, like pretty much any other JavaScript testing framework.
+  // They're designed to be easy to get at a glance;
+  // here, you're expecting `result` to be 2.5.
+  expect(result).toBe(2.5);
+});
+From there, just run your script:yarn run testAnd Jest will run your tests.CoverageOne of the best things about Jest is how easy it is to get code coverage. All you have to do is pass in the coverage flag and Jest will handle the rest. So, for the example in the last section, just change the command to:yarn run test -- --coverageAnd it'll give you the coverage:  👑 This is just an introduction; there is so much more to Jest.latest testing posts  Jest Mock Timers   Asynchronous Tests in Jest   An Overview of Mock Functions With Jest   Introduction to Snapshot Testing With Jest   all testing posts follow us @alligatorioⓘ Affiliate Partners ↓      Published: May 24, 2017 ↑    Tweet It  ✖ Clear 🕵 Search Results 🔎 Searching...Sponsored by #native_company# — Learn More  #native_title# #native_desc##native_cta# React For BeginnersLearn the fundamentals of React by building a real-time appⓘ About this affiliate link  Write for Us  About Credits Contact PrivacySupport us on Ko-fi • AdvertiseNote that we link to certain 3rd party products via affiliate or sponsored links. You can learn more about it here.Code snippets licensed under MIT, unless otherwise noted. Content & Graphics © 2020 Alligator.io LLC <link rel='stylesheet' property='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/3ea99ed793a1628a3248cdf646d43972fc16a956/assets/css/c.css'/>

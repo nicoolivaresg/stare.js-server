@@ -1,7 +1,8 @@
-const debug = require('debug')('simple-express-server');
-const express = require('express');
-const app = express();
+'use strict';
+
 require('dotenv').config();
+const debug = require('debug')('simple-express-server');
+const app = require('express')();
 const cors = require('cors');
 
 app.use(cors());
@@ -13,6 +14,7 @@ const myMetrics = {
 };
 
 const stare = require('../..')({
+  engines: ['google'],
   tempFilesPath: './my-personal-temp',
   personalMetrics: myMetrics
 });

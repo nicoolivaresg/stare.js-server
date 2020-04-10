@@ -20,7 +20,7 @@ const stare = require('../..')({
   solr: {
     baseUrl: 'http://localhost:8983',
     core: 'techproducts',
-    titleProperty: 'name',
+    titleProperty: 'genre_s',
     snippetProperty: 'series_t',
     imageProperty: ''
   }
@@ -43,5 +43,5 @@ app.get('/:engine', (request, response) => {
 });
 
 app.listen(process.env.SERVER_PORT, () => {
-  debug(`simple-express-server app listening on port http://localhost:${process.env.SERVER_PORT}!`);
+  debug(`app listening on [http://localhost:${process.env.SERVER_PORT}]!`);
 });

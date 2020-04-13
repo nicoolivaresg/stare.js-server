@@ -86,7 +86,7 @@ DEBUG=stare.js
 ## Todo
 - Documentation
 - More examples
-- Travis-CI integration
-- Test script
-- metrics/perspicuity Support for languages other than ['en-us', 'es', 'fr']
+- Travis-CI integration (For Organization)
+- Add more test coverage.
+- metrics/perspicuity support for languages other than ['en-us', 'es', 'fr']
 - personal SERP support (like metrics)

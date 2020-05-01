@@ -60,17 +60,15 @@ module.exports = {
   // A set of global variables that need to be available in all test environments
   globals: {
     stareOptions: {
-      /* Temporal files path, where the documents html/text will be saved as an html/txt file. Must be relative path. */
-      tempFilesPath: './temp/',
       /* Metrics modules/function created by the user */
       personalMetrics: {},
       /* Default number of results per page for SERP */
       resultsPerPage: 10,
       /* Google API */
-      googleApiKey: process.env.GOOGLE_API_KEY || 'AIzaSyCmGpofWrPxQT-KrJnoArXaas0zOADXikA',
-      googleApiCx: process.env.GOOGLE_API_CX || '010212477578150644501:wtqrloafnss',
+      googleApiKey: process.env.GOOGLE_API_KEY,
+      googleApiCx: process.env.GOOGLE_API_CX,
       /* Bing API */
-      bingServiceKey: process.env.BING_SERVICE_KEY || '6442c14653484b4488b0ef5db65fdb6e',
+      bingServiceKey: process.env.BING_SERVICE_KEY,
       /* ElasticSearch config */
       elasticsearch: {
         baseUrl: 'http://localhost:9200',

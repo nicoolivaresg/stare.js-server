@@ -13,7 +13,6 @@ branches:
   only:
   - master
   - develop
-  - ci
 
 script:
   - npm install googleapis ms-rest-azure azure-cognitiveservices-websearch

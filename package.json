@@ -29,9 +29,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/d-salazar-se/stare.js-server/issues"
+    "url": "https://github.com/StArE-js/stare.js-server/issues"
   },
-  "homepage": "https://github.com/d-salazar-se/stare.js-server#readme",
+  "homepage": "https://github.com/StArE-js/stare.js-server#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "debug": "^4.1.1",

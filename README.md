@@ -2,8 +2,8 @@
 
 ![npm](https://img.shields.io/npm/v/stare.js)
 ![npm](https://img.shields.io/npm/dm/stare.js)
-[![Build Status](https://travis-ci.com/d-salazar-se/stare.js-server.svg?branch=master)](https://travis-ci.com/d-salazar-se/stare.js-server)
-[![Coverage Status](https://coveralls.io/repos/github/d-salazar-se/stare.js-server/badge.svg?branch=master)](https://coveralls.io/github/d-salazar-se/stare.js-server?branch=master)
+[![Build Status](https://travis-ci.com/StArE-js/stare.js-client.svg?branch=master)](https://travis-ci.com/StArE-js/stare.js-client)
+[![Coverage Status](https://coveralls.io/repos/github/StArE-js/stare.js-server/badge.svg?branch=master)](https://coveralls.io/github/StArE-js/stare.js-server?branch=master)
 ![NPM](https://img.shields.io/npm/l/stare.js)
 
 ## Description

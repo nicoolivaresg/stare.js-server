@@ -15,7 +15,6 @@ const myMetrics = {
 
 const stare = require('../..')({
   engines: ['google', 'solr'],
-  tempFilesPath: './my-personal-temp',
   personalMetrics: myMetrics,
   googleApiKey: process.env.GOOGLE_API_KEY,
   googleApiCx: process.env.GOOGLE_API_CX,

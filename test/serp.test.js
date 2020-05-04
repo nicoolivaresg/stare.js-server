@@ -4,6 +4,7 @@ const bing = require('../lib/serp/bing');
 const ecosia = require('../lib/serp/ecosia');
 const elasticsearch = require('../lib/serp/elasticsearch');
 const google = require('../lib/serp/google');
+const solr = require('../lib/serp/solr');
 
 function toBeStareDocument(data) {
   expect(data).toHaveProperty('totalResults', expect.any(String));
@@ -39,7 +40,7 @@ describe('SERP bing', () => {
 
   test(`No BING_SERVICE_KEY setted`, () => {
     global.stareOptions.bingServiceKey = null;
-    return expect(bing('jest', 1)).toThrow();
+    return expect(bing('jest', 1)).rejects.toThrow();
   });
 });
 
@@ -60,7 +61,7 @@ describe('SERP elasticsearch', () => {
 
   test(`No stareOptions.elasticsearch setted`, () => {
     global.stareOptions.elasticsearch = null;
-    return expect(elasticsearch('jest', 1)).toThrow();
+    return expect(elasticsearch('jest', 1)).rejects.toThrow();
   });
 });
 
@@ -79,12 +80,12 @@ describe('SERP google', () => {
 
   test(`No GOOGLE_API_KEY setted`, () => {
     global.stareOptions.googleApiKey = null;
-    return expect(google('jest', 1)).toThrow();
+    return expect(google('jest', 1)).rejects.toThrow();
   });
 
   test(`No GOOGLE_API_CX setted`, () => {
     global.stareOptions.googleApiCx = null;
-    return expect(google('jest', 1)).toThrow();
+    return expect(google('jest', 1)).rejects.toThrow();
   });
 });
 
@@ -99,6 +100,6 @@ describe('SERP solr', () => {
 
   test(`No stareOptions.solr setted`, () => {
     global.stareOptions.solr = null;
-    return expect(solr('jest', 1)).toThrow();
+    return expect(solr('jest', 1)).rejects.toThrow();
   });
 });

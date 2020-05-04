@@ -6,22 +6,18 @@ const stareUrl = 'https://starejs.informatica.usach.cl/';
 
 describe('Scrapper', () => {
   test(`Succesfully get html`, () => {
-    html(stareUrl).then(data => {
-      expect(data).toBeCalledWith(expect.any(String));
-    });
+    expect(scrapper.html(stareUrl)).resolves.toBe(expect.any(String));
   });
 
   test(`Failed to get html`, () => {
-    expect(html(`not-a-valid-url`)).toThrow();
+    expect(scrapper.html(null)).rejects.toThrow();
   });
 
   test(`Succesfully get text`, () => {
-    text(stareUrl).then(data => {
-      expect(data).toBeCalledWith(expect.any(String));
-    });
+    expect(scrapper.text(stareUrl)).resolves.toBe(expect.any(String));
   });
 
    test(`Failed to get text`, () => {
-    expect(text(`not-a-valid-url`)).toThrow();
+    expect(scrapper.text(null)).rejects.toThrow();
   });
 });

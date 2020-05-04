@@ -12,7 +12,7 @@ describe('Scrapper', () => {
   });
 
   test(`Failed to get html`, () => {
-    expect(html(`not-a-valid-url`).toThrow());
+    expect(html(`not-a-valid-url`)).toThrow();
   });
 
   test(`Succesfully get text`, () => {
@@ -22,6 +22,6 @@ describe('Scrapper', () => {
   });
 
    test(`Failed to get text`, () => {
-    expect(text(`not-a-valid-url`).toThrow());
+    expect(text(`not-a-valid-url`)).toThrow();
   });
 });

@@ -31,8 +31,8 @@ const opts = {
   index: 1
 };
 
-describe('Features Happy cases', () => {
-  test(`Feature 'language' with valid stareDocument object`, () => {
+describe(`Feature 'language'`, () => {
+  test(`Valid stareDocument object`, () => {
     return language(stareValidDocument, opts).then(data => {
       expect(data).toMatchObject({
         'name': 'language',
@@ -42,7 +42,13 @@ describe('Features Happy cases', () => {
     });
   });
 
-  test(`Feature 'length' with valid stareDocument object`, () => {
+  test(`Invalid stareDocument (snippet == '').`, async () => {
+    await expect(language(stareInvalidDocument, opts)).rejects.toThrow();
+  });
+});
+
+describe(`Feature 'length'`, () => {
+  test(`Valid stareDocument object`, () => {
     return length(stareValidDocument, opts).then(data => {
       expect(data).toMatchObject({
         'name': 'length',
@@ -53,7 +59,19 @@ describe('Features Happy cases', () => {
     });
   });
 
-  test(`Feature 'perspicuity' with valid stareDocument object`, () => {
+  test(`Feature 'length' with invalid stareDocument object`, () => {
+    return length(stareInvalidDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'length',
+        'index': 1,
+        'value': -1
+      });
+    });
+  });
+});
+
+describe(`Feature 'perspicuity'`, () => {
+  test(`Valid stareDocument object`, () => {
     return perspicuity(stareValidDocument, opts).then(data => {
       expect(data).toMatchObject({
         'name': 'perspicuity',
@@ -66,6 +84,18 @@ describe('Features Happy cases', () => {
     expect(data.value).toBeLessThanOrEqual(207);
   });
 
+  test(`Invalid stareDocument object`, () => {
+    return perspicuity(stareInvalidDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'perspicuity',
+        'index': 1,
+        'value': expect.any(Object)
+      });
+    });
+  });
+});
+
+describe(`Feature 'ranking'`, () => {
   test(`Feature 'ranking' with valid stareDocument object`, () => {
     return ranking(stareValidDocument, opts).then(data => {
       expect(data).toMatchObject({
@@ -77,46 +107,16 @@ describe('Features Happy cases', () => {
   });
 });
 
-describe('Features Sad cases', () => {
-  test(`Feature 'language' with invalid stareDocument (snippet == '').`, async () => {
-    await expect(language(stareInvalidDocument, opts)).rejects.toThrow();
-  });
-
-  test(`Feature 'length' with invalid stareDocument object`, () => {
-    return length(stareInvalidDocument, opts).then(data => {
-      expect(data).toMatchObject({
-        'name': 'length',
-        'index': 1,
-        'value': -1
-      });
-    });
-  });
-
-  test(`Feature 'perspicuity' with invalid stareDocument object`, () => {
-    return perspicuity(stareInvalidDocument, opts).then(data => {
-      expect(data).toMatchObject({
-        'name': 'perspicuity',
-        'index': 1,
-        'value': expect.any(Object)
-      });
-    });
-  });
-
-  test('getMetrics() without stareDocument and empty metrics array', () => {
+describe(`Function 'getMetrics'`, () => {
+  test('Without stareDocument and empty metrics array', () => {
     return getMetrics({}, []).then(data => {
       expect(data).toEqual([]);
     })
   });
 
-  test('getMetrics() without stareDocument.', () => {
+  test('Without stareDocument.', () => {
     return getMetrics({}, ['language', 'length', 'perspicuity', 'ranking']).then(data => {
       expect(data.length).toEqual(0);
     })
   });
-
-  // test('getMetrics({stuff}, [stuff]) with both valid args', () => {
-  //   return getMetrics({}, ['language', 'length', 'perspicuity', 'ranking']).then(data => {
-  //     expect(data.length).toEqual(4);
-  //   })
-  // });
 });

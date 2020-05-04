@@ -14,24 +14,17 @@ const myMetrics = {
 };
 
 const stare = require('../..')({
-  engines: ['google', 'solr'],
+  engines: ['google'],
   personalMetrics: myMetrics,
   googleApiKey: process.env.GOOGLE_API_KEY,
-  googleApiCx: process.env.GOOGLE_API_CX,
-  solr: {
-    baseUrl: 'http://localhost:8983',
-    core: 'techproducts',
-    titleProperty: 'genre_s',
-    snippetProperty: 'series_t',
-    imageProperty: ''
-  }
+  googleApiCx: process.env.GOOGLE_API_CX
 });
 
 app.get('/:engine', (request, response) => {
   let engine = request.params.engine;
   let { query, pageNumber } = request.query;
 
-  let metrics = ['ranking', 'language', 'perspicuity', 'length', 'multimedia', 'a', 'b'];
+  let metrics = ['ranking', 'links'];
 
   stare(engine, query, pageNumber, metrics)
     .then(result => {

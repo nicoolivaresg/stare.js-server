@@ -11,8 +11,8 @@ os:
 
 branches:
   only:
-  - master
-  - develop
+    - master
+    - develop
 
 script:
   - npm install googleapis ms-rest-azure azure-cognitiveservices-websearch

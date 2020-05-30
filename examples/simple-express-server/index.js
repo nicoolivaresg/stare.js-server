@@ -22,11 +22,11 @@ const stare = require('../..')({
 
 app.get('/:engine', (request, response) => {
   let engine = request.params.engine;
-  let { query, pageNumber } = request.query;
+  let { query, numberOfResults } = request.query;
 
   let metrics = ['ranking', 'links'];
 
-  stare(engine, query, pageNumber, metrics)
+  stare(engine, query, numberOfResults, metrics)
     .then(result => {
       response.json(result);
     })

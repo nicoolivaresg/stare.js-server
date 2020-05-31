@@ -27,13 +27,8 @@ app.get('/:engine', (request, response) => {
   let metrics = ['ranking', 'links'];
 
   stare(engine, query, numberOfResults, metrics)
-    .then(result => {
-      response.json(result);
-    })
-    .catch(err => {
-      debug(`Error: %O`, err);
-      response.status(500).json(err);
-    });
+    .then(result => response.status(200).json(result))
+    .catch(err => response.status(500).json(err));
 });
 
 app.listen(process.env.SERVER_PORT, () => {

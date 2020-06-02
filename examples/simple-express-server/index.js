@@ -24,7 +24,7 @@ app.get('/:engine', (request, response) => {
   let engine = request.params.engine;
   let { query, numberOfResults } = request.query;
 
-  let metrics = ['ranking', 'links'];
+  let metrics = ['ranking', 'screenshot'];
 
   stare(engine, query, numberOfResults, metrics)
     .then(result => response.status(200).json(result))

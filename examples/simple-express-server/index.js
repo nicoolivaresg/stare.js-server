@@ -24,7 +24,7 @@ app.get('/:engine', (request, response) => {
   let engine = request.params.engine;
   let { query, numberOfResults } = request.query;
 
-  let metrics = ['ranking', 'links'];
+  let metrics = ['ranking', 'keywords-position'];
 
   stare(engine, query, numberOfResults, metrics)
     .then(result => response.status(200).json(result))
@@ -33,4 +33,5 @@ app.get('/:engine', (request, response) => {
 
 app.listen(process.env.SERVER_PORT, () => {
   debug(`app listening on [http://localhost:${process.env.SERVER_PORT}]!`);
+  console.log(`app listening on [http://localhost:${process.env.SERVER_PORT}]!`);
 });

@@ -16,8 +16,10 @@ const myMetrics = {
 const stare = require('../..')({
   engines: ['google'],
   personalMetrics: myMetrics,
-  googleApiKey: process.env.GOOGLE_API_KEY,
-  googleApiCx: process.env.GOOGLE_API_CX
+  google: {
+    apiKey: process.env.GOOGLE_API_KEY,
+    apiCx: process.env.GOOGLE_API_CX
+  }
 });
 
 app.get('/:engine', (request, response) => {

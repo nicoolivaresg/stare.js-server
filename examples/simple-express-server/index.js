@@ -14,17 +14,22 @@ const myMetrics = {
 };
 
 const stare = require('../..')({
-  engines: ['google'],
+  engines: ['bing'],
   personalMetrics: myMetrics,
-  googleApiKey: process.env.GOOGLE_API_KEY,
-  googleApiCx: process.env.GOOGLE_API_CX
+  google: {
+    apiKey: process.env.GOOGLE_API_KEY,
+    apiCx: process.env.GOOGLE_API_CX
+  },
+  bing: {
+    serviceKey: process.env.BING_SERVICE_KEY
+  }
 });
 
 app.get('/:engine', (request, response) => {
   let engine = request.params.engine;
   let { query, numberOfResults } = request.query;
 
-  let metrics = ['ranking', 'keywords-position'];
+  let metrics = ['ranking'];
 
   stare(engine, query, numberOfResults, metrics)
     .then(result => response.status(200).json(result))

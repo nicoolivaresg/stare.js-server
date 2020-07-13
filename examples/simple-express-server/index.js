@@ -14,10 +14,15 @@ const myMetrics = {
 };
 
 const stare = require('../..')({
-  engines: ['google'],
+  engines: ['bing'],
   personalMetrics: myMetrics,
-  googleApiKey: process.env.GOOGLE_API_KEY,
-  googleApiCx: process.env.GOOGLE_API_CX
+  google: {
+    apiKey: process.env.GOOGLE_API_KEY,
+    apiCx: process.env.GOOGLE_API_CX
+  },
+  bing: {
+    serviceKey: process.env.BING_SERVICE_KEY
+  }
 });
 
 app.get('/:engine', (request, response) => {
@@ -41,4 +46,9 @@ app.get('/:engine', (request, response) => {
 
 app.listen(process.env.SERVER_PORT, () => {
   debug(`app listening on [http://localhost:${process.env.SERVER_PORT}]!`);
+<<<<<<< HEAD
 });
+=======
+  console.log(`app listening on [http://localhost:${process.env.SERVER_PORT}]!`);
+});
+>>>>>>> develop

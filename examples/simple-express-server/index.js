@@ -31,12 +31,13 @@ app.get('/:engine', (request, response) => {
 
   let metrics = [
     'ranking',
+    'keywords-position',
     'language',
     'length',
     'links',
     'multimedia',
     'perspicuity',
-    // 'screenshot'
+    'screenshot'
   ];
 
   stare(engine, query, numberOfResults, metrics)
@@ -46,9 +47,4 @@ app.get('/:engine', (request, response) => {
 
 app.listen(process.env.SERVER_PORT, () => {
   debug(`app listening on [http://localhost:${process.env.SERVER_PORT}]!`);
-<<<<<<< HEAD
 });
-=======
-  console.log(`app listening on [http://localhost:${process.env.SERVER_PORT}]!`);
-});
->>>>>>> develop

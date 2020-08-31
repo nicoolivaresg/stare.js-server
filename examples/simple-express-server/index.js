@@ -14,35 +14,29 @@ const myMetrics = {
 };
 
 const stare = require('../..')({
-  engines: ['google', 'solr'],
+  engines: ['bing', 'searchcloud'],
   personalMetrics: myMetrics,
-  googleApiKey: process.env.GOOGLE_API_KEY,
-  googleApiCx: process.env.GOOGLE_API_CX,
-  solr: {
-    baseUrl: 'http://localhost:8983',
-    core: 'techproducts',
-    titleProperty: 'genre_s',
-    snippetProperty: 'series_t',
-    imageProperty: ''
+  google: {
+    apiKey: process.env.GOOGLE_API_KEY,
+    apiCx: process.env.GOOGLE_API_CX
+  },
+  bing: {
+    serviceKey: process.env.BING_SERVICE_KEY
   }
 });
 
 app.get('/:engine', (request, response) => {
   let engine = request.params.engine;
-  let { query, pageNumber } = request.query;
+  let { query, numberOfResults } = request.query;
 
-  let metrics = ['ranking', 'language', 'perspicuity', 'length', 'multimedia', 'a', 'b'];
+  let metrics = ['ranking'];
 
-  stare(engine, query, pageNumber, metrics)
-    .then(result => {
-      response.json(result);
-    })
-    .catch(err => {
-      debug(`Error: %O`, err);
-      response.status(500).json(err);
-    });
+  stare(engine, query, numberOfResults, metrics)
+    .then(result => response.status(200).json(result))
+    .catch(err => response.status(500).json(err));
 });
 
 app.listen(process.env.SERVER_PORT, () => {
   debug(`app listening on [http://localhost:${process.env.SERVER_PORT}]!`);
+  console.log(`app listening on [http://localhost:${process.env.SERVER_PORT}]!`);
 });

@@ -77,6 +77,13 @@ module.exports = {
         titleProperty: 'title',
         snippetProperty: 'snippet',
         imageProperty: 'image'
+      }, 
+      solr: {
+        baseUrl: 'http://localhost:8983',
+        core: '',
+        titleProperty: 'title',
+        snippetProperty: 'snippet',
+        imageProperty: 'image'
       }
     }
   },

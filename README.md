@@ -17,10 +17,9 @@ npm install stare.js
 ## How to use
 
 ```js
-const stare = require('stare.js')(...options);
+const stare = require('stare.js')({...options});
 
-// stare(searchEngine = '', query = '', pageNumber = 1, metrics = []);
-stare('google', 'What is love?', 1, ['ranking', 'language'])
+stare('google', 'What is love?', 10, ['ranking', 'language'])
   .then(result => {
     console.log(result);
   })
@@ -28,6 +27,15 @@ stare('google', 'What is love?', 1, ['ranking', 'language'])
     console.error(err);
   });
 ```
+
+Where the arguments of the funtction are:
+
+| Argument | Type | Description |
+| ----- | ----- | ----- |
+| engine | <code>String</code> | Search Engine to use (requires previous configuration for some cases) |
+| query |<code>String</code> | Search Query (self explanatory)
+| number of results to show | <code>Number</code> | Maximun numbers of documents/results to get from the engine |
+| metrics | <code>Array</code> | Metrics to get from each document |
 
 You can find the most basic full example in the [examples folder](/examples/).
 
@@ -41,13 +49,16 @@ You can find the most basic full example in the [examples folder](/examples/).
 
 StArE.js is currently extended with the following plugins:
 
+### SERPs
+
 | SERP | Function name | Description | Documentation |
 | ------ | ------ | ------ | ------ |
 | Google | <code>google</code> | Handler for SERPs obtained through the Google Custom Search JSON API | [See docs](/docs/SERP.md#google) |
 | Bing | <code>bing</code> | Handler for SERPs obtained through the Bing web search API | [See docs](/docs/SERP.md#bing) |
 | Ecosia | <code>ecosia</code> | Handler for SERPs obtained from ecosia through a web scrapper | [See docs](/docs/SERP.md#ecosia) |
 | ElasticSearch | <code>elasticsearch</code> | Handler for SERPs obtained from ElasticSearch (only basic support) via request-promise | [See docs](/docs/SERP.md#elasticsearch) |
-
+| Solr | <code>solr</code> | Handler for SERPs obtained from Solr (only basic support) via request-promise | [See docs](/docs/SERP.md#solr) |
+| AWS Search Cloud | <code>searchcloud</code> | Handler for SERPs obtained from AWS Search Cloud (only basic support) via request-promise | [See docs](/docs/SERP.md#searchcloud) |
 
 | Metrics | Metric name | Description | Documentation |
 | ------ | ------ | ------ | ------ |
@@ -55,10 +66,12 @@ StArE.js is currently extended with the following plugins:
 | Language | <code>language</code> | Detect the most probable language for a document | [See docs](/docs/METRICS.md#language) |
 | Length of Documents | <code>length</code> | Calculate the length in characters of a Document | [See docs](/docs/METRICS.md#length) |
 | Ranking | <code>ranking</code> | Calculate the length in characters of a Document | [See docs](/docs/METRICS.md#ranking) |
-
+| Keywords Position | <code>keywords-position</code> | Gets the position of the query terms (keywords) inside the text body of the document | [See docs](/docs/METRICS.md#keywords-position) |
+| Links | <code>links</code> | Gets the relation between the documents based on the url that the text body contains. Only for HTML documents. | [See docs](/docs/METRICS.md#links) |
+| Multimedia | <code>multimedia</code> | Gets the amount of multimedia data on the document (audio, video, images) that the text body contains. Only for HTML documents. | [See docs](/docs/METRICS.md#multimedia) |
 As is explained in the docs you can create your own extensions for [SERP](/docs/SERP.md#create-your-own-extensions) and [metrics](/docs/METRICS.md#create-your-own-extensions) support.
 
-Please see the full documentation [here](/docs/INDEX.md).
+Please read the full documentation [here](/docs/INDEX.md).
 
 ## Debug / Logging
 
@@ -85,8 +98,4 @@ DEBUG=stare.js
 
 ## Todo
 - Documentation
-- More examples
-- Travis-CI integration (For Organization)
-- Add more test coverage.
-- metrics/perspicuity support for languages other than ['en-us', 'es', 'fr']
 - personal SERP support (like metrics)

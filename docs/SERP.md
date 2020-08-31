@@ -9,19 +9,14 @@ Even if you don't interact directly with each SERP extension, you still need to 
 
 For the Google SERP StArE.js uses the customsearch API provided by Google for Node.js, you can find all the official info on the [Google website for the API](https://developers.google.com/custom-search/v1/cse/list).
 
-For that you will need to set the API Key and CX in the .env file of your project:
-
-```env
-GOOGLE_API_KEY=<you API key here>
-GOOGLE_API_CX=<you CX here>
-```
-
-or in the options when you import StArE.js
+For that you will need to set up the API Key and CX in the options when you import StArE.js
 
 ```js
 const stare = require('stare.js')({
-  googleApiKey: '<you API key here>',
-  googleApiCx: '<you CX here>'
+  google: {
+    apiKey: '<you API key here>',
+    apiCx: '<you CX here>'
+  }
 });
 ```
 
@@ -39,15 +34,17 @@ or in the optiosn when you import StArE.js
 
 ```js
 const stare = require('stare.js')({
-  bingServiceKey: '<you API service key here>'
+  bing: {
+    serviceKey: '<you API service key here>'
+  }
 });
-````
+```
 <a name="ecosia"></a>
 ### Ecosia
 
 Ecosia on the other hand uses a webscrapper, so your only problem here could be that Ecosia blocks your IP for suspicious activity.
 
-<a name="ElasticSearch"></a>
+<a name="elasticsearch"></a>
 ### ElasticSearch
 
 For ElasticSearch, at the current state, StArE.js only supports 1 host, which means that clusters in different host/ports won't be allowed to work simultaneosly.
@@ -61,6 +58,7 @@ const stare = require('stare.js')({
     _index: '<your search index here>',
     _source: '<your source document property here>',
     titleProperty: '<your title property here>',
+    bodyProperty: '<your body property here>',
     snippetProperty: '<your snippet property here>',
     imageProperty: '<your image property here>'
   }
@@ -73,11 +71,72 @@ const stare = require('stare.js')({
     _index: '_myIndex',
     _source: '_source',
     titleProperty: 'filename',
-    snippetProperty: 'body',
-    imageProperty: ''
+    bodyProperty: 'body',
+    snippetProperty: 'snippet',
+    imageProperty: 'myImage'
   }
 });
-````
+```
+
+<a name="solr"></a>
+### Solr
+
+For Solr is the same case as ElasticSearch, you must provide all the info of your Solr host/index on the options when importing StArE.js:
+
+```js
+const stare = require('stare.js')({
+  solr: {
+    baseUrl: '<your host here>',
+    core: '<your core here>,
+    titleProperty: '<your title property here>',
+    bodyProperty: '<your body property here>',
+    snippetProperty: '<your snippet property here>',
+    imageProperty: '<your image property here>'
+  }
+});
+
+/* example */
+const stare = require('stare.js')({
+  solr: {
+    baseUrl: 'http://localhost:8983',
+    core: '',
+    titleProperty: 'title',
+    bodyProperty: 'body',
+    snippetProperty: 'snippet',
+    imageProperty: 'image'
+  }
+});
+```
+
+<a name="searchcloud"></a>
+### AWS Search Cloud
+
+For AWS Search Cloud is the same case as ElasticSearch/Solr, you must provide all the info on the options when importing StArE.js:
+
+```js
+const stare = require('stare.js')({
+  searchcloud: {
+    searchEndpoint: '<your search endpoint here>',
+    apiVersion: '<your api version here>',
+    titleProperty: '<your title property here>',
+    bodyProperty: '<your body property here>',
+    snippetProperty: '<your snippet property here>',
+    imageProperty: '<your image property here>'
+  }
+});
+
+/* example */
+const stare = require('stare.js')({
+  searchcloud: {
+    searchEndpoint: 'http://search-movies-y6gelr4lv3jeu4rvoelunxsl2e.us-east-1.cloudsearch.amazonaws.com/',
+    apiVersion: '2013-01-01',
+    titleProperty: 'fields.title',
+    bodyProperty: 'fields.plot',
+    snippetProperty: 'fields.plot',
+    imageProperty: 'fields.image_url'
+  }
+});
+```
 
 <a name="create-your-own-extensions"></a>
 ## Create your own extensions

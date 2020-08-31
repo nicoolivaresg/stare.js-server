@@ -14,7 +14,7 @@ const myMetrics = {
 };
 
 const stare = require('../..')({
-  engines: ['bing'],
+  engines: ['bing', 'searchcloud'],
   personalMetrics: myMetrics,
   google: {
     apiKey: process.env.GOOGLE_API_KEY,

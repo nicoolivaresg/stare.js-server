@@ -24,13 +24,7 @@ const stare = require('stare.js')({
 ### Bing
 In the same way as before, for Bing you musst provide an API key for [Azure Cognitive Services (Bing Web Seach)](https://docs.microsoft.com/en-us/javascript/api/@azure/cognitiveservices-websearch/?view=azure-node-latest).
 
-And in the same way, you must provide the key via the .env file of your project:
-
-```env
-BING_SERVICE_KEY=<you API service key here>
-```
-
-or in the optiosn when you import StArE.js
+And in the same way, you must provide the key on the options when you import StArE.js
 
 ```js
 const stare = require('stare.js')({

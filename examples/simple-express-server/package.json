@@ -4,7 +4,7 @@
   "description": "Simple StArE.js on a express server",
   "main": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./index"
   },
   "license": "MIT",
   "dependencies": {

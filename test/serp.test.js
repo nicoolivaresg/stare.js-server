@@ -5,6 +5,7 @@ const ecosia = require('../lib/serp/ecosia');
 const elasticsearch = require('../lib/serp/elasticsearch');
 const google = require('../lib/serp/google');
 const solr = require('../lib/serp/solr');
+const searchcloud = require('../lib/serp/searchcloud');
 
 function toBeStareDocument(data) {
   expect(data).toHaveProperty('totalResults', expect.any(String));
@@ -27,18 +28,10 @@ describe('SERP bing', () => {
   });
 
   test(`Failed to get 'bing' results for query=jest and pageNumber=1`, () => {
-    return bing(null, 1).then(data => toBeStareDocument);
+    return expect(bing(null, 1)).rejects.toThrow();
   });
 
-  // test(`No ms-rest-azure installed`, () => {
-  //   return bing('jest', 1).then(data => toBeStareDocument);
-  // });
-
-  // test(`No azure-cognitiveservices-websearch installed`, () => {
-  //   return bing('jest', 1).then(data => toBeStareDocument);
-  // });
-
-  test(`No BING_SERVICE_KEY setted`, () => {
+  test(`No bing.serviceKey setted`, () => {
     global.stareOptions.bing.serviceKey = null;
     return expect(bing('jest', 1)).rejects.toThrow();
   });
@@ -51,12 +44,9 @@ describe('SERP ecosia', () => {
 });
 
 describe('SERP elasticsearch', () => {
-  // test(`Succesfully get 'elasticsearch' results for query=jest and pageNumber=1`, () => {
-  //   return elasticsearch('jest', 1).then(data => toBeStareDocument);
-  // });
-
   test(`Failed to get 'elasticsearch' results for query=jest and pageNumber=1`, () => {
-    return elasticsearch(null, 1).then(data => toBeStareDocument);
+    return expect(elasticsearch(null, 1)).rejects.toThrow();
+
   });
 
   test(`No stareOptions.elasticsearch setted`, () => {
@@ -71,35 +61,38 @@ describe('SERP google', () => {
   });
 
   test(`Failed to get 'google' results for query=jest and pageNumber=1`, () => {
-    return google(null, 1).then(data => toBeStareDocument);
+    return expect(google(null, 1)).rejects.toThrow();
   });
 
-  // test(`No googleapis installed`, () => {
-  //   return google('jest', 1).then(data => toBeStareDocument);
-  // });
-
-  test(`No GOOGLE_API_KEY setted`, () => {
+  test(`No google.apiKey setted`, () => {
     global.stareOptions.google.apiKey = null;
     return expect(google('jest', 1)).rejects.toThrow();
   });
 
-  test(`No GOOGLE_API_CX setted`, () => {
+  test(`No google.apiCx setted`, () => {
     global.stareOptions.google.apiCx = null;
     return expect(google('jest', 1)).rejects.toThrow();
   });
 });
 
 describe('SERP solr', () => {
-  // test(`Succesfully get 'solr' results for query=jest and pageNumber=1`, () => {
-  //   return solr('jest', 1).then(data => toBeStareDocument);
-  // });
-
   test(`Failed to get 'solr' results for query=jest and pageNumber=1`, () => {
-    return solr(null, 1).then(data => toBeStareDocument);
+    return expect(solr(null, 1)).rejects.toThrow();
   });
 
-  test(`No stareOptions.solr setted`, () => {
-    global.stareOptions.solr = null;
-    return expect(solr('jest', 1)).rejects.toThrow();
+  // test(`No stareOptions.solr setted`, () => {
+  //   global.stareOptions.solr = null;
+  //   return expect(solr('jest', 1)).rejects.toThrow();
+  // });
+});
+
+describe('SERP AWS Search cloud', () => {
+  test(`Failed to get 'searchcloud' results for query=jest and pageNumber=1`, () => {
+    return expect(searchcloud(null, 1)).rejects.toThrow();
+  });
+
+  test(`No stareOptions.searchcloud setted`, () => {
+    global.stareOptions.searchcloud = null;
+    return expect(searchcloud('jest', 1)).rejects.toThrow();
   });
 });

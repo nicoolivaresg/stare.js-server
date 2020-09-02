@@ -7,6 +7,7 @@ const perspicuity = require('../lib/metrics/perspicuity');
 const ranking = require('../lib/metrics/ranking');
 const keywordsPosition = require('../lib/metrics/keywords-position');
 const multimedia = require('../lib/metrics/multimedia');
+const links = require('../lib/metrics/links');
 
 /* Same SERP response for every test */
 const stareValidDocument = {
@@ -158,6 +159,28 @@ describe(`Feature 'multimedia'`, () => {
     return multimedia(stareInvalidDocument, opts).then(data => {
       expect(data).toMatchObject({
         'name': 'multimedia',
+        'index': 1,
+        'value': -1
+      });
+    });
+  });
+});
+
+describe(`Feature 'links'`, () => {
+  test(`Valid stareDocument object`, () => {
+    return links(stareValidDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'links',
+        'index': 1,
+        'value': expect.any(Array)
+      });
+    });
+  });
+
+  test(`Invalid stareDocument.`, () => {
+    return links(stareInvalidDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'links',
         'index': 1,
         'value': -1
       });

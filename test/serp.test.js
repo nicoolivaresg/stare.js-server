@@ -39,7 +39,7 @@ describe('SERP bing', () => {
   // });
 
   test(`No BING_SERVICE_KEY setted`, () => {
-    global.stareOptions.bingServiceKey = null;
+    global.stareOptions.bing.serviceKey = null;
     return expect(bing('jest', 1)).rejects.toThrow();
   });
 });
@@ -51,9 +51,9 @@ describe('SERP ecosia', () => {
 });
 
 describe('SERP elasticsearch', () => {
-  test(`Succesfully get 'elasticsearch' results for query=jest and pageNumber=1`, () => {
-    return elasticsearch('jest', 1).then(data => toBeStareDocument);
-  });
+  // test(`Succesfully get 'elasticsearch' results for query=jest and pageNumber=1`, () => {
+  //   return elasticsearch('jest', 1).then(data => toBeStareDocument);
+  // });
 
   test(`Failed to get 'elasticsearch' results for query=jest and pageNumber=1`, () => {
     return elasticsearch(null, 1).then(data => toBeStareDocument);
@@ -79,20 +79,20 @@ describe('SERP google', () => {
   // });
 
   test(`No GOOGLE_API_KEY setted`, () => {
-    global.stareOptions.googleApiKey = null;
+    global.stareOptions.google.apiKey = null;
     return expect(google('jest', 1)).rejects.toThrow();
   });
 
   test(`No GOOGLE_API_CX setted`, () => {
-    global.stareOptions.googleApiCx = null;
+    global.stareOptions.google.apiCx = null;
     return expect(google('jest', 1)).rejects.toThrow();
   });
 });
 
 describe('SERP solr', () => {
-  test(`Succesfully get 'solr' results for query=jest and pageNumber=1`, () => {
-    return solr('jest', 1).then(data => toBeStareDocument);
-  });
+  // test(`Succesfully get 'solr' results for query=jest and pageNumber=1`, () => {
+  //   return solr('jest', 1).then(data => toBeStareDocument);
+  // });
 
   test(`Failed to get 'solr' results for query=jest and pageNumber=1`, () => {
     return solr(null, 1).then(data => toBeStareDocument);

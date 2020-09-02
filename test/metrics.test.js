@@ -5,11 +5,14 @@ const language = require('../lib/metrics/language');
 const length = require('../lib/metrics/length');
 const perspicuity = require('../lib/metrics/perspicuity');
 const ranking = require('../lib/metrics/ranking');
+const keywordsPosition = require('../lib/metrics/keywords-position');
+const multimedia = require('../lib/metrics/multimedia');
 
 /* Same SERP response for every test */
 const stareValidDocument = {
   title: 'StArE.js — Search engine visuAlization packagE - Usach',
   link: 'https://starejs.informatica.usach.cl/',
+  body: '',
   snippet: 'StArE.js: An extensible open source toolkit for visualizing search engine results. ... Supervised by González-Ibáñez, R. Departamento de Ingeniería Informática, ...',
   image: null
 };
@@ -17,7 +20,8 @@ const stareValidDocument = {
 const stareInvalidDocument = {
   title: 'No good title',
   link: 'no-good-url-either',
-  snippet: '', // Italian: "Not supported language"
+  body: null,
+  snippet: null,
   image: null
 };
 
@@ -42,8 +46,14 @@ describe(`Feature 'language'`, () => {
     });
   });
 
-  test(`Invalid stareDocument (snippet == '').`, async () => {
-    await expect(language(stareInvalidDocument, opts)).rejects.toThrow();
+  test(`Invalid stareDocument (snippet == '').`, () => {
+    return language(stareInvalidDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'language',
+        'index': 1,
+        'value': null
+      });
+    });
   });
 });
 
@@ -102,6 +112,54 @@ describe(`Feature 'ranking'`, () => {
         'name': 'ranking',
         'index': 1,
         'value': 2
+      });
+    });
+  });
+});
+
+describe(`Feature 'keywords-position'`, () => {
+  test(`Valid stareDocument object`, () => {
+    return keywordsPosition(stareValidDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'keywords-position',
+        'index': 1,
+        'value': expect.any(Object)
+      });
+    });
+  });
+
+  test(`Invalid stareDocument.`, () => {
+    return keywordsPosition(stareInvalidDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'keywords-position',
+        'index': 1,
+        'value': -1
+      });
+    });
+  });
+});
+
+describe(`Feature 'multimedia'`, () => {
+  test(`Valid stareDocument object`, () => {
+    return multimedia(stareValidDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'multimedia',
+        'index': 1,
+        'value': expect.any(Object)
+      });
+
+      expect(data.value.video).toBeGreaterThanOrEqual(0);
+      expect(data.value.img).toBeGreaterThanOrEqual(0);
+      expect(data.value.audio).toBeGreaterThanOrEqual(0);
+    });
+  });
+
+  test(`Invalid stareDocument.`, () => {
+    return multimedia(stareInvalidDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'multimedia',
+        'index': 1,
+        'value': -1
       });
     });
   });

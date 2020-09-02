@@ -10,6 +10,7 @@ const ranking = require('../lib/metrics/ranking');
 const stareValidDocument = {
   title: 'StArE.js — Search engine visuAlization packagE - Usach',
   link: 'https://starejs.informatica.usach.cl/',
+  body: '',
   snippet: 'StArE.js: An extensible open source toolkit for visualizing search engine results. ... Supervised by González-Ibáñez, R. Departamento de Ingeniería Informática, ...',
   image: null
 };
@@ -17,7 +18,8 @@ const stareValidDocument = {
 const stareInvalidDocument = {
   title: 'No good title',
   link: 'no-good-url-either',
-  snippet: '', // Italian: "Not supported language"
+  body: null,
+  snippet: null,
   image: null
 };
 
@@ -42,8 +44,14 @@ describe(`Feature 'language'`, () => {
     });
   });
 
-  test(`Invalid stareDocument (snippet == '').`, async () => {
-    await expect(language(stareInvalidDocument, opts)).rejects.toThrow();
+  test(`Invalid stareDocument (snippet == '').`, () => {
+    return language(stareInvalidDocument, opts).then(data => {
+      expect(data).toMatchObject({
+        'name': 'language',
+        'index': 1,
+        'value': null
+      });
+    });
   });
 });
 

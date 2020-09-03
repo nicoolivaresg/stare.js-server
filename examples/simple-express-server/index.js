@@ -4,7 +4,7 @@ require('dotenv').config();
 const debug = require('debug')('simple-express-server');
 const app = require('express')();
 const cors = require('cors');
-const { sample } = require('lodash');
+const figlet = require('figlet');
 
 app.use(cors());
 app.options('*', cors());
@@ -15,7 +15,7 @@ const myMetrics = {
 };
 
 const stare = require('../..')({
-  engines: ['bing', 'searchcloud'],
+  engines: ['bing', 'ecosia', 'google', 'searchcloud'],
   personalMetrics: myMetrics,
   google: {
     apiKey: process.env.GOOGLE_API_KEY,
@@ -30,7 +30,7 @@ app.get('/:engine', (request, response) => {
   let engine = request.params.engine;
   let { query, numberOfResults } = request.query;
 
-  let metrics = ['ranking'];
+  let metrics = ['keywords-position', 'language', 'length', 'links', 'multimedia', 'perspicuity', 'ranking'];
 
   stare(engine, query, numberOfResults, metrics)
     .then(result => response.status(200).json(result))
@@ -38,6 +38,6 @@ app.get('/:engine', (request, response) => {
 });
 
 app.listen(process.env.SERVER_PORT, () => {
-  debug(`app listening on [http://localhost:${process.env.SERVER_PORT}]!`);
-  console.log(`app listening on [http://localhost:${process.env.SERVER_PORT}]!`);
+  debug(figlet.textSync('StArE.js-server'));
+  debug(`App running on [http://localhost:${process.env.SERVER_PORT}]!`);
 });

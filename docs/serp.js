@@ -2,6 +2,7 @@
 
 /* Your imports here */
 const rp = require('request-promise');
+const _ = require('lodash');
 
 /**
  * Get the SERP from <yourSerp> and returns an object with the StArE.js standard format.
@@ -12,8 +13,17 @@ const rp = require('request-promise');
  * @returns {Promise} Promise object with the standarized StArE.js formatted SERP response from <yourSerp>.
  */
 function getResultPages(query, numberOfResults) {
+
+  /* Some basic validations */
+  if (!query || query.length === 0) {
+    return Promise.reject(new Error('Query cannot be null.'));
+  }
+
+  numberOfResults = numberOfResults < 0 ? 1 : numberOfResults;
   
   /* Some stuff and logic here */
+
+  let searchUrl = 'Your own search URL here, must have all the query params';
 
   return new Promise((resolve, reject) => {
     /* Get the normal SERP response with some sort of request */
@@ -22,7 +32,7 @@ function getResultPages(query, numberOfResults) {
       json: true
     })
       .then(
-        solrResult => {
+        yourSerpResult => {
           let formattedResponse = {
             totalResults: yourSerpResult.formattedTotalResults,
             searchTerms: yourSerpResult.searchTerms,
@@ -33,8 +43,9 @@ function getResultPages(query, numberOfResults) {
 
           /* Extract the documents relevant info for StArE.js */
           formattedResponse.documents = yourSerpResult.items.map(item => ({
-            title: String,
-            link: String || Object,
+            title: String,          // _.get(item, 'title')
+            link: String || null,   // _.get(item, 'link', null)
+            body: String,           // if link is not defined, then body is required
             snippet: String,
             image: String
           }));

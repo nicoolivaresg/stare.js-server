@@ -2,24 +2,23 @@
 
 const scrapper = require('../lib/scrapper/');
 
-const stareUrl = 'https://starejs.informatica.usach.cl/';
+const VALID_URL = 'https://starejs.informatica.usach.cl/';
+const INVALID_URL = null;
 
 describe('Scrapper', () => {
   test(`Succesfully get html`, () => {
-    return scrapper.html(stareUrl).then(data => {
-      expect(data).toBe(expect.any(String));
-    });
+    return expect(scrapper.html(VALID_URL).then(html => (typeof html).toLowerCase())).resolves.toBe("string");
   }, 10000);
 
   test(`Failed to get html`, () => {
-    return expect(scrapper.html(null)).rejects.toThrow();
+    return expect(scrapper.html(INVALID_URL)).rejects.toThrow();
   });
 
   test(`Succesfully get text`, () => {
-    return expect(scrapper.text(stareUrl)).resolves.toBe(expect.any(String));
+    return expect(scrapper.text(VALID_URL).then(text => (typeof text).toLowerCase())).resolves.toBe("string");
   }, 10000);
 
    test(`Failed to get text`, () => {
-    return expect(scrapper.text(null)).rejects.toThrow();
+    return expect(scrapper.text(INVALID_URL)).rejects.toThrow();
   });
 });

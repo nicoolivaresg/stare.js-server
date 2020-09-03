@@ -4,6 +4,7 @@ require('dotenv').config();
 const debug = require('debug')('simple-express-server');
 const app = require('express')();
 const cors = require('cors');
+const { sample } = require('lodash');
 
 app.use(cors());
 app.options('*', cors());

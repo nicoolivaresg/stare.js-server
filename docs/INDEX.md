@@ -28,6 +28,63 @@ stare(engine, query, numberOfResults, metrics);
 stare('google', 'What is love?', 10, ['length', 'perspicuity']);
 ```
 
+Which response will have the following format
+
+```json
+{
+  "totalResults": "983,000,000",
+  "searchTerms": "What is love?",
+  "numberOfItems": 10,
+  "startIndex": 1,
+  "documents": [
+    {
+      "title": "What is love?",
+      "link": "https://theconversation.com/what-is-love-139212",
+      "snippet": "Jul 14, 2020 ... Love is an emotion that keeps people bonded and committed to one another. \nFrom an evolutionary psychology perspective, love evolved to keep ...",
+      "image": "https://images.theconversation.com/files/344437/original/file-20200629-96659-1qzyyt0.jpg?ixlib=rb-1.1.0&rect=221%2C597%2C4691%2C2345&q=45&auto=format&w=1356&h=668&fit=crop",
+      "metrics": {
+        "keywords-position": {
+          "documentLength": 1523,
+          "keywords": {
+            "What": [233, 544],
+            "is": [239, 301, 322, 489],
+            "love?": [242]
+          }
+        },
+        "language": "english",
+        "length": 1523,
+        "links": [
+          "theconversation.com",
+          "google.com",
+          "apple.news",
+          "flipboard.com",
+          "twitter.com",
+          "facebook.com",
+          "linkedin.com",
+          "jstor.org",
+          "wiley.com",
+          "apa.org",
+          "sciencedirect.com",
+          "google.com.au",
+          "unirioja.es",
+          "ovid.com",
+          "sagepub.com",
+          "oup.com"
+        ],
+        "multimedia": {
+          "video": 0,
+          "img": 11,
+          "audio": 0
+        },
+        "perspicuity": 187,
+        "ranking": 1
+      }
+    },
+  // ... 9 more items
+  ]
+}
+```
+
 ## Options
 
 ```js

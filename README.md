@@ -97,6 +97,3 @@ DEBUG=stare.js
 ## License
 [MIT](LICENSE)
 
-## Todo
-- Documentation
-- personal SERP support (like metrics)

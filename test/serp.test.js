@@ -1,13 +1,13 @@
 'use strict';
 
 const debug = require('debug')('stare.js:server/test/serp.test.js');
+const _ = require('lodash');
 
 const bing = require('../lib/serp/bing');
 const ecosia = require('../lib/serp/ecosia');
 const elasticsearch = require('../lib/serp/elasticsearch');
 const google = require('../lib/serp/google');
 const solr = require('../lib/serp/solr');
-const searchcloud = require('../lib/serp/searchcloud');
 
 function toBeStareDocument(data) {
   expect(data).toHaveProperty('totalResults', expect.any(String));
@@ -33,7 +33,7 @@ describe('SERP bing', () => {
     return expect(bing(null, 1)).rejects.toThrow();
   });
 
-  // test(`No bing.serviceKey setted`, () => {
+  // test(`No bing.serviceKey set`, () => {
   //   global.stareOptions.bing.serviceKey = null;
   //   return expect(bing('jest', 1)).rejects.toThrow();
   // });
@@ -43,6 +43,10 @@ describe('SERP ecosia', () => {
   test(`Succesfully get 'ecosia' results for query=jest and numberOfResults=1`, () => {
     return ecosia('jest', 1).then(data => toBeStareDocument);
   });
+
+  test(`Failed to get 'ecosia' results for query=null and numberOfResults=1`, () => {
+    return expect(ecosia(null, 1)).rejects.toThrow();
+  });
 });
 
 describe('SERP elasticsearch', () => {
@@ -51,7 +55,7 @@ describe('SERP elasticsearch', () => {
 
   });
 
-  test(`No stareOptions.elasticsearch setted`, () => {
+  test(`No stareOptions.elasticsearch set`, () => {
     global.stareOptions.elasticsearch = null;
     return expect(require('../lib/serp/elasticsearch')).rejects.toThrow();
   });
@@ -66,12 +70,12 @@ describe('SERP google', () => {
     return expect(google(null, 1)).rejects.toThrow();
   });
 
-  test(`No google.apiKey setted`, () => {
+  test(`No google.apiKey set`, () => {
     global.stareOptions.google.apiKey = null;
     return expect(google('jest', 1)).rejects.toThrow();
   });
 
-  test(`No google.apiCx setted`, () => {
+  test(`No google.apiCx set`, () => {
     global.stareOptions.google.apiCx = null;
     return expect(google('jest', 1)).rejects.toThrow();
   });
@@ -83,13 +87,23 @@ describe('SERP solr', () => {
   });
 
 
-  test(`No stareOptions.solr setted`, () => {
+  test(`No stareOptions.solr set`, () => {
     global.stareOptions.solr = null;
     return expect(require('../lib/serp/solr')).rejects.toThrow();
   });
 });
 
 describe('SERP AWS Search cloud', () => {
+  const defaultOptions = _.assign({}, global.stareOptions.searchcloud);
+  global.stareOptions.searchcloud = null;
+
+  test(`Failed to import 'searchcloud' stareOptions not set`, () => {
+    return expect(require('../lib/serp/searchcloud')).rejects.toThrow();
+  });
+
+  global.stareOptions.searchcloud = defaultOptions;
+  const searchcloud = require('../lib/serp/searchcloud');
+
   test(`Succesfully get 'searchcloud' results for query=wolverine and numberOfResults=1`, () => {
     return searchcloud('wolverine', 1).then(data => toBeStareDocument);
   });

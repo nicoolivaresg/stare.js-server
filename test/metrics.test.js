@@ -161,7 +161,13 @@ describe(`Feature 'ranking'`, () => {
 
 describe(`Feature 'keywords-position'`, () => {
   test(`Valid stareDocument object`, () => {
-    return keywordsPosition(stareValidDocument, opts).then(data => {
+    let englishText = _.assign({}, stareInvalidDocument);
+    englishText.body = 'Although the phrase is nonsense, it does have a long history. The phrase has been used for several centuries by typographers to show the most distinctive features of their fonts. It is used because the letters involved and the letter spacing in those combinations reveal, at their best, the weight, design, and other important features of the typeface.';
+    
+    let options = _.assign({}, opts);
+    options.searchInfo.searchTerms = 'phrase';
+    
+    return keywordsPosition(englishText, options).then(data => {
       expect(data).toMatchObject({
         'name': 'keywords-position',
         'index': 1,

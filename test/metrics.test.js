@@ -39,6 +39,16 @@ const opts = {
   index: 1
 };
 
+const serpResponse = {
+  totalResults: 1,
+  searchTerms: 'Testing query',
+  numberOfItems: 1,
+  startIndex: 0,
+  documents: [
+    stareValidDocument
+  ]
+};
+
 describe(`Feature 'language'`, () => {
   test(`Valid stareDocument object`, () => {
     return language(stareValidDocument, opts).then(data => {
@@ -245,6 +255,23 @@ describe(`Function 'getMetrics'`, () => {
   test('Without stareDocument.', () => {
     return getMetrics({}, ['language', 'length', 'perspicuity', 'ranking']).then(data => {
       expect(data.length).toEqual(0);
+    })
+  });
+
+  test('Personal metric.', () => {
+    global.stareOptions.personalMetrics = {
+      voidFunction: (stareDocument, opts) => ({}),
+      notAFunction: null
+    };
+    return getMetrics(serpResponse, ['voidFunction']).then(data => {
+      expect(data.length).toEqual(0);
+    })
+  });
+
+  test('Get ranking metric from document.', () => {
+    return getMetrics(serpResponse, ['ranking']).then(data => {
+      expect(data.length).toEqual(1);
+      expect(data[0].value).toEqual(0);
     })
   });
 });

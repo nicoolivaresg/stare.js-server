@@ -263,7 +263,7 @@ describe(`Function 'getMetrics'`, () => {
       voidFunction: (stareDocument, opts) => ({}),
       notAFunction: null
     };
-    return getMetrics(serpResponse, ['voidFunction']).then(data => {
+    return getMetrics(serpResponse, ['voidFunction', 'notAFunction']).then(data => {
       expect(data.length).toEqual(0);
     })
   });

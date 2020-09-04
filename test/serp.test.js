@@ -3,7 +3,6 @@
 const debug = require('debug')('stare.js:server/test/serp.test.js');
 const _ = require('lodash');
 
-const bing = require('../lib/serp/bing');
 const ecosia = require('../lib/serp/ecosia');
 const elasticsearch = require('../lib/serp/elasticsearch');
 const google = require('../lib/serp/google');
@@ -25,9 +24,11 @@ function toBeStareDocument(data) {
 }
 
 describe('SERP bing', () => {
-  // test(`Succesfully get 'bing' results for query=jest and numberOfResults=1`, () => {
-  //   return bing('jest', 1).then(data => toBeStareDocument);
-  // });
+  const bing = require('../lib/serp/bing');
+  
+  test(`Succesfully get 'bing' results for query=jest and numberOfResults=1`, () => {
+    return bing('jest', 1).then(data => toBeStareDocument);
+  });
 
   test(`Failed to get 'bing' results for query=null and numberOfResults=1`, () => {
     return expect(bing(null, 1)).rejects.toThrow();

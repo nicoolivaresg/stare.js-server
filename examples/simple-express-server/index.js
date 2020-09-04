@@ -14,9 +14,14 @@ const myMetrics = {
   b: require('./my-metrics/b')
 };
 
+const mySERPs = {
+  personalSERP: require('./my-serps/my-serp')
+};
+
 const stare = require('../..')({
-  engines: ['bing', 'ecosia', 'google', 'searchcloud'],
+  engines: ['bing', 'ecosia', 'google', 'searchcloud', 'personalSERP'],
   personalMetrics: myMetrics,
+  personalSERPs: mySERPs,
   google: {
     apiKey: process.env.GOOGLE_API_KEY,
     apiCx: process.env.GOOGLE_API_CX
@@ -30,8 +35,8 @@ app.get('/:engine', (request, response) => {
   let engine = request.params.engine;
   let { query, numberOfResults } = request.query;
 
-  let metrics = ['keywords-position', 'language', 'length', 'links', 'multimedia', 'perspicuity', 'ranking'];
-
+  let metrics = [];
+  // let metrics = ['keywords-position', 'language', 'length', 'links', 'multimedia', 'perspicuity', 'ranking'];
   stare(engine, query, numberOfResults, metrics)
     .then(result => response.status(200).json(result))
     .catch(err => response.status(500).json(err));

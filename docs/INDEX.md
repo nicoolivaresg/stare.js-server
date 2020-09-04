@@ -93,6 +93,8 @@ let stareOptions = {
   engines: [],
   /* Metrics modules/function created by the user */
   personalMetrics: {},
+  /* SERPs modules/function created by the user */
+  personalSERPs: {},
   /* Default number of results to get from the SERP */
   numberOfResults: 10,
   /* Google API */
@@ -141,7 +143,8 @@ let stareOptions = {
 | Property | Type | Description |
 | --- | --- | --- |
 | engines | <code>Array</code> | Array of strings of the code name of the SERPs to load, each one requires some kind of configuration that must be specified in an object with its name [as says in the docs](/docs/SERP.md) |
-| personalMetrics | <code>Object</code> | Object with the pair <code>key-value</code> format where the <code>key</code> is the name of the engine and the value is a reference to a function which returns de SERP in the StArE.js format. |
+| personalMetrics | <code>Object</code> | Object with the pair <code>key-value</code> format where the <code>key</code> is the name of the metric/feature and the value is a reference to a function which returns in the StArE.js format. |
+| personalSERPs | <code>Object</code> | Object with the pair <code>key-value</code> format where the <code>key</code> is the name of the engine and the value is a reference to a function which returns the SERP in the StArE.js format. |
 | numberOfResults | <code>Number</code> | Number of results that the SERPs will return (default: <code>10</code>).
 | google | <code>Object</code> | Object with Google API Key/CX for Custom Search |
 | bing | <code>Object</code> | Object with the Bing Service Key for Web Search |

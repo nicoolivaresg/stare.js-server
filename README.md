@@ -59,6 +59,7 @@ StArE.js is currently extended with the following plugins:
 | ElasticSearch | <code>elasticsearch</code> | Handler for SERPs obtained from ElasticSearch (only basic support) via request-promise | [See docs](/docs/SERP.md#elasticsearch) |
 | Solr | <code>solr</code> | Handler for SERPs obtained from Solr (only basic support) via request-promise | [See docs](/docs/SERP.md#solr) |
 | AWS Search Cloud | <code>searchcloud</code> | Handler for SERPs obtained from AWS Search Cloud (only basic support) via request-promise | [See docs](/docs/SERP.md#searchcloud) |
+| Baremo | <code>baremo</code> | Handler for SERPs obtained from Baremo (only basic support by ElasticSearch indexation of results documents) via request-promise | [See docs](/docs/SERP.md#searchcloud)  |
 
 | Metrics | Metric name | Description | Documentation |
 | ------ | ------ | ------ | ------ |

@@ -19,16 +19,16 @@ const mySERPs = {
 };
 
 const stare = require('../..')({
-  engines: ['bing', 'ecosia', 'google', 'searchcloud', 'personalSERP'],
+  engines: ['baremo'],
   personalMetrics: myMetrics,
   personalSERPs: mySERPs,
-  google: {
-    apiKey: process.env.GOOGLE_API_KEY,
-    apiCx: process.env.GOOGLE_API_CX
-  },
-  bing: {
-    serviceKey: process.env.BING_SERVICE_KEY
-  }
+  // google: {
+  //   apiKey: process.env.GOOGLE_API_KEY,
+  //   apiCx: process.env.GOOGLE_API_CX
+  // },
+  // bing: {
+  //   serviceKey: process.env.BING_SERVICE_KEY
+  // }
 });
 
 app.get('/:engine', (request, response) => {
@@ -36,6 +36,7 @@ app.get('/:engine', (request, response) => {
   let { query, numberOfResults } = request.query;
 
   let metrics = [];
+  // let metrics = ['LawsuitAmmountByCourt'];
   // let metrics = ['keywords-position', 'language', 'length', 'links', 'multimedia', 'perspicuity', 'ranking'];
   stare(engine, query, numberOfResults, metrics)
     .then(result => response.status(200).json(result))

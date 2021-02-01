@@ -131,6 +131,38 @@ const stare = require('stare.js')({
   }
 });
 ```
+<a name="Baremo"></a>
+### Baremo
+
+For Baremo is the same case as ElasticSearch/Solr, you must provide all the info of your host/index and properties names 
+```js
+const stare = require('stare.js')({
+  elasticsearch: {
+    baseUrl: '<your host here>',
+    _index: '<your search index here> (default: jurisprudencia)',
+    _source: '<your source document property here>',
+    titleProperty: '<your title property here>',
+    bodyProperty: '<your body property here> (default: _source)',
+    snippetProperty: '<your snippet property here>',
+    imageProperty: '<your image property here>'
+  }
+});
+
+/* example */
+const stare = require('stare.js')({
+  elasticsearch: {
+    baseUrl: 'http://localhost:9200',
+    _index: 'jurisprudencia',
+    _source: '_source',
+    titleProperty: 'filename',
+    bodyProperty: '_source',
+    snippetProperty: 'snippet',
+    imageProperty: 'myImage'
+  }
+});
+```
+
+
 
 <a name="create-your-own-extensions"></a>
 ## Create your own extensions

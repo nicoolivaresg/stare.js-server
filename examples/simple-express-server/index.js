@@ -36,7 +36,7 @@ app.get('/:engine', (request, response) => {
   let { query, numberOfResults } = request.query;
 
   // let metrics = [];
-  let metrics = ['lawsuit-ammount', 'courts','injuries'];
+  let metrics = ['lawsuit-ammount', 'courts','injuries','accused-company'];
   // let metrics = ['keywords-position', 'language', 'length', 'links', 'multimedia', 'perspicuity', 'ranking'];
   stare(engine, query, numberOfResults, metrics)
     .then(result => response.status(200).json(result))

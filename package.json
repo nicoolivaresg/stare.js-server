@@ -1,6 +1,6 @@
 {
-  "name": "stare.js-server",
-  "version": "1.0.0-rc",
+  "name": "@nicolas.olivares.g/stare.js-server",
+  "version": "1.0.2-rc",
   "description": "Node.js serp visualization server",
   "keywords": [
     "server",
@@ -25,6 +25,10 @@
     {
       "name": "Diego Salazar S.",
       "email": "diego.salazar.se@usach.cl"
+    },
+    {
+      "name": "Nicolás Olivares G.",
+      "email": "nicolas.olivares.g@usach.cl"
     }
   ],
   "license": "MIT",
@@ -35,16 +39,14 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "debug": "^4.1.1",
+    "downloadjs": "^1.4.7",
     "html-table-to-json": "^1.0.0",
     "hyphenopoly": "^4.1.0",
     "languagedetect": "^2.0.0",
     "lodash": "^4.17.19",
-    "downloadjs": "^1.4.7",
     "natural": "^3.0.1",
-    "pdf-table-extractor": "^1.0.3",
-    "puppeteer": "^7.0.1",
     "qs": "^6.9.3",
-    "request-promise": "^4.2.5",
+    "request-promise": "^4.2.6",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {

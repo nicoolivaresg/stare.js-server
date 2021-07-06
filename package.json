@@ -37,6 +37,7 @@
   },
   "homepage": "https://github.com/StArE-js/stare.js-server#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.3",
     "debug": "^4.1.1",
     "downloadjs": "^1.4.7",
